@@ -18,6 +18,7 @@ namespace Maple.Game.Zaohua.Metadata
     [ContextMemberMetadata<TbEquipEffectCfg>]
     [ContextMemberMetadata<TbLvCfg>]
     [ContextMemberMetadata<TbMagicCfg>]
+    [ContextMemberMetadata<TbRoleCfg>]
 
 
     public partial class GameMetadataContext

@@ -44,11 +44,13 @@ namespace Maple.Game.Zaohua.Metadata
 
 
             }
-            foreach (var item in ptr_dataImpl.FUNCTION_LIST.AsEnumerable())
+            foreach (var item in ptr_dataImpl.LV_LIST.AsEnumerable())
             {
 
-                var name = item.GET_GET_NAME().ToString();
-                this.Logger.LogInformation("{type}:{name}", nameof(TbFunctionCfg), name);
+                var name = item.GET_GET_LV_NAME().ToString();
+                var desc = item.GET_GET_INTRODUCE().ToString();
+
+                this.Logger.LogInformation("{type}:{name}:{desc}", nameof(TbLvCfg), name, desc);
 
 
             }
