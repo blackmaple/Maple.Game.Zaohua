@@ -1,5 +1,6 @@
 ﻿using Maple.Game.Zaohua.Metadata;
 using Maple.MonoGameAssistant.Core;
+using Maple.MonoGameAssistant.GameDTO;
 using Maple.MonoGameAssistant.Model;
 using Maple.MonoGameAssistant.Windows.HotKey.HookWindowMessage;
 using Maple.MonoGameAssistant.Windows.Service;
@@ -34,7 +35,17 @@ namespace Maple.Game.Zaohua.Win
             return MonoGameAssistant.MetadataUnity.UnityMetadataContext.CreateUnityMetadataContext(RuntimeContext, Logger);
         }
 
+        public required GameResourceCache Cache { get; set; }
 
+        protected sealed override async ValueTask LoadGameDataAsync()
+        {
+            Cache = await this.MonoTaskAsync((p) => GameResourceCache.Create(p));
+        }
+
+        public override ValueTask<GameSessionInfoDTO> GetSessionInfoAsync()
+        {
+            return base.GetSessionInfoAsync();
+        }
         //protected override ValueTask F5_KeyDown()
         //{
         //    this.MonoTaskAsync((p) => GameResourceCache.CreateCache(p));

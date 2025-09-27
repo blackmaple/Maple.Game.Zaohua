@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.Game.Zaohua.Metadata
 
             public static implicit operator Ptr_TbItemCfg(System.IntPtr ptr) => new Ptr_TbItemCfg(ptr);
             public static implicit operator System.IntPtr(Ptr_TbItemCfg ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_TbItemCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_TbItemCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -545,217 +547,217 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.Void .ctor()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void CTOR(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
 */
             /// <summary>
             ///   System.Boolean <EditorRefreshReferCfg>b__74_0(TbTypeCfg x)
             /// </summary>
             /// <param name = "x">class TbTypeCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
-            public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_0(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
+           public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_0(nint x); 
 */
             /// <summary>
             ///   System.Boolean <EditorRefreshReferCfg>b__74_1(TbArtCfg x)
             /// </summary>
             /// <param name = "x">class TbArtCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_1", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
-            public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_1(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_1", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
+           public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_1(nint x); 
 */
             /// <summary>
             ///   System.Boolean <EditorRefreshReferCfg>b__74_2(TbMagicCfg x)
             /// </summary>
             /// <param name = "x">class TbMagicCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_2", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
-            public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_2(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_2", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
+           public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_2(nint x); 
 */
             /// <summary>
             ///   System.Boolean <EditorRefreshReferCfg>b__74_3(TbGradeCfg x)
             /// </summary>
             /// <param name = "x">class TbGradeCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_3", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
-            public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_3(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<EditorRefreshReferCfg>b__74_3", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
+           public partial System.Boolean EDITOR_REFRESH_REFER_CFGB__74_3(nint x); 
 */
             /// <summary>
             ///   System.Boolean <get_EdArtCfg>b__64_0(TbArtCfg x)
             /// </summary>
             /// <param name = "x">class TbArtCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdArtCfg>b__64_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
-            public partial System.Boolean GET_ED_ART_CFGB__64_0(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdArtCfg>b__64_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
+           public partial System.Boolean GET_ED_ART_CFGB__64_0(nint x); 
 */
             /// <summary>
             ///   System.Boolean <get_EdGradeCfg>b__72_0(TbGradeCfg x)
             /// </summary>
             /// <param name = "x">class TbGradeCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdGradeCfg>b__72_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
-            public partial System.Boolean GET_ED_GRADE_CFGB__72_0(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdGradeCfg>b__72_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
+           public partial System.Boolean GET_ED_GRADE_CFGB__72_0(nint x); 
 */
             /// <summary>
             ///   System.Boolean <get_EdMagicCfg>b__68_0(TbMagicCfg x)
             /// </summary>
             /// <param name = "x">class TbMagicCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdMagicCfg>b__68_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
-            public partial System.Boolean GET_ED_MAGIC_CFGB__68_0(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdMagicCfg>b__68_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
+           public partial System.Boolean GET_ED_MAGIC_CFGB__68_0(nint x); 
 */
             /// <summary>
             ///   System.Boolean <get_EdTypeCfg>b__60_0(TbTypeCfg x)
             /// </summary>
             /// <param name = "x">class TbTypeCfg</param>
             /// <returns>struct System.Boolean</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdTypeCfg>b__60_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
-            public partial System.Boolean GET_ED_TYPE_CFGB__60_0(nint x); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("<get_EdTypeCfg>b__60_0", "System.Boolean", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
+           public partial System.Boolean GET_ED_TYPE_CFGB__60_0(nint x); 
 */
             /// <summary>
             ///   System.Void EditorRefreshReferCfg()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("EditorRefreshReferCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void EDITOR_REFRESH_REFER_CFG(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("EditorRefreshReferCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void EDITOR_REFRESH_REFER_CFG(); 
 */
             /// <summary>
             ///   TbArtCfg get_EdArtCfg()
             /// </summary>
             /// <returns>class TbArtCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdArtCfg", "TbArtCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_ED_ART_CFG(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdArtCfg", "TbArtCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_ED_ART_CFG(); 
 */
             /// <summary>
             ///   TbGradeCfg get_EdGradeCfg()
             /// </summary>
             /// <returns>class TbGradeCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdGradeCfg", "TbGradeCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_ED_GRADE_CFG(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdGradeCfg", "TbGradeCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_ED_GRADE_CFG(); 
 */
             /// <summary>
             ///   TbMagicCfg get_EdMagicCfg()
             /// </summary>
             /// <returns>class TbMagicCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdMagicCfg", "TbMagicCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_ED_MAGIC_CFG(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdMagicCfg", "TbMagicCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_ED_MAGIC_CFG(); 
 */
             /// <summary>
             ///   TbTypeCfg get_EdTypeCfg()
             /// </summary>
             /// <returns>class TbTypeCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdTypeCfg", "TbTypeCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_ED_TYPE_CFG(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_EdTypeCfg", "TbTypeCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_ED_TYPE_CFG(); 
 */
             /// <summary>
             ///   System.String get_GetDes()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_DES(); 
-*/
+            public partial PMonoString GET_GET_DES();
+
             /// <summary>
             ///   System.String get_GetEffDes()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_EFF_DES(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_EFF_DES(); 
 */
             /// <summary>
             ///   System.Collections.Generic.List<EffTypeEnum> get_GetEffType()
             /// </summary>
             /// <returns>class System.Collections.Generic.List<EffTypeEnum></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffType", "System.Collections.Generic.List<EffTypeEnum>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_EFF_TYPE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffType", "System.Collections.Generic.List<EffTypeEnum>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_EFF_TYPE(); 
 */
             /// <summary>
             ///   System.String get_GetName()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetName", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_NAME(); 
-*/
+            public partial PMonoString GET_GET_NAME();
+
             /// <summary>
             ///   System.Int32[] get_GetTLNodeIds()
             /// </summary>
             /// <returns>class System.Int32[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetTLNodeIds", "System.Int32[]", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_TL_NODE_IDS(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetTLNodeIds", "System.Int32[]", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_TL_NODE_IDS(); 
 */
             /// <summary>
             ///   TbItemCfg MemoryClone()
             /// </summary>
             /// <returns>class TbItemCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("MemoryClone", "TbItemCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint MEMORY_CLONE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("MemoryClone", "TbItemCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint MEMORY_CLONE(); 
 */
             /// <summary>
             ///   System.Void set_EdArtCfg(TbArtCfg value)
             /// </summary>
             /// <param name = "value">class TbArtCfg</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdArtCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
-            public partial void SET_ED_ART_CFG(nint value); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdArtCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbArtCfg", 0)]
+           public partial void SET_ED_ART_CFG(nint value); 
 */
             /// <summary>
             ///   System.Void set_EdGradeCfg(TbGradeCfg value)
             /// </summary>
             /// <param name = "value">class TbGradeCfg</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdGradeCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
-            public partial void SET_ED_GRADE_CFG(nint value); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdGradeCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbGradeCfg", 0)]
+           public partial void SET_ED_GRADE_CFG(nint value); 
 */
             /// <summary>
             ///   System.Void set_EdMagicCfg(TbMagicCfg value)
             /// </summary>
             /// <param name = "value">class TbMagicCfg</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdMagicCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
-            public partial void SET_ED_MAGIC_CFG(nint value); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdMagicCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicCfg", 0)]
+           public partial void SET_ED_MAGIC_CFG(nint value); 
 */
             /// <summary>
             ///   System.Void set_EdTypeCfg(TbTypeCfg value)
             /// </summary>
             /// <param name = "value">class TbTypeCfg</param>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdTypeCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
-            public partial void SET_ED_TYPE_CFG(nint value); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("set_EdTypeCfg", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbTypeCfg", 0)]
+           public partial void SET_ED_TYPE_CFG(nint value); 
 */
         }
     }

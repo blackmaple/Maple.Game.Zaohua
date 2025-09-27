@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.Game.Zaohua.Metadata
 
             public static implicit operator Ptr_TbMagicCfg(System.IntPtr ptr) => new Ptr_TbMagicCfg(ptr);
             public static implicit operator System.IntPtr(Ptr_TbMagicCfg ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_TbMagicCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_TbMagicCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -385,57 +387,57 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.Void .ctor()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void CTOR(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
 */
             /// <summary>
             ///   TbMagicCfg Copy()
             /// </summary>
             /// <returns>class TbMagicCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("Copy", "TbMagicCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint COPY(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("Copy", "TbMagicCfg", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint COPY(); 
 */
             /// <summary>
             ///   System.String get_GetEffDes()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_EFF_DES(); 
-*/
+            public partial PMonoString GET_GET_EFF_DES();
+
             /// <summary>
             ///   System.Collections.Generic.List<EffTypeEnum> get_GetEffType()
             /// </summary>
             /// <returns>class System.Collections.Generic.List<EffTypeEnum></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffType", "System.Collections.Generic.List<EffTypeEnum>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_EFF_TYPE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffType", "System.Collections.Generic.List<EffTypeEnum>", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_EFF_TYPE(); 
 */
             /// <summary>
             ///   System.String get_GetIntroduce()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetIntroduce", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_INTRODUCE(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetIntroduce", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_INTRODUCE(); 
 */
             /// <summary>
             ///   System.String get_GetName()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetName", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_NAME(); 
-*/
+            public partial PMonoString GET_GET_NAME();
+
             /// <summary>
             ///   System.Int32[] get_GetTLNodeIds()
             /// </summary>
             /// <returns>class System.Int32[]</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetTLNodeIds", "System.Int32[]", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_TL_NODE_IDS(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetTLNodeIds", "System.Int32[]", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial nint GET_GET_TL_NODE_IDS(); 
 */
         }
     }

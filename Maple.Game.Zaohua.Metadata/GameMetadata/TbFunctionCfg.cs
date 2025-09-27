@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -17,7 +19,7 @@ namespace Maple.Game.Zaohua.Metadata
 
             public static implicit operator Ptr_TbFunctionCfg(System.IntPtr ptr) => new Ptr_TbFunctionCfg(ptr);
             public static implicit operator System.IntPtr(Ptr_TbFunctionCfg ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_TbFunctionCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_TbFunctionCfg ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -155,18 +157,18 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.Void .ctor()
             /// </summary>
             /// <returns>struct System.Void</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial void CTOR(); 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute(".ctor", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+           public partial void CTOR(); 
 */
             /// <summary>
             ///   System.String get_GetName()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetName", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_NAME(); 
-*/
+            public partial PMonoString GET_GET_NAME();
+
         }
     }
 }
