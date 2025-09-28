@@ -68,10 +68,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbPlayCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("<NpcPlayCfg>k__BackingField", "System.Collections.Generic.List<TbPlayCfg>")]
-           public static partial nint NPC_PLAY_CFG { get; set; } 
-*/
+           public static partial SysPtrList<TbPlayCfg.Ptr_TbPlayCfg> NPC_PLAY_CFG { get; set; } 
+
 
             /// <summary>
             /// 0x8 System.String m_Lock
@@ -188,10 +188,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbNameCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("nameList", "System.Collections.Generic.List<TbNameCfg>")]
-           public partial nint NAME_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbNameCfg.Ptr_TbNameCfg> NAME_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x68 System.Collections.Generic.List<TbFunctionCfg> functionList
@@ -228,20 +228,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbWeatherCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("weatherList", "System.Collections.Generic.List<TbWeatherCfg>")]
-           public partial nint WEATHER_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbWeatherCfg.Ptr_TbWeatherCfg> WEATHER_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x88 System.Collections.Generic.List<TbCgCfg> cgList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbCgCfg></returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("cgList", "System.Collections.Generic.List<TbCgCfg>")]
-           public partial nint CG_LIST { get; set; } 
-*/
+            
+           //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("cgList", "System.Collections.Generic.List<TbCgCfg>")]
+           //public partial nint CG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x90 System.Collections.Generic.List<TbSceneCfg> sceneList
@@ -258,10 +258,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbPlayCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("playCfgList", "System.Collections.Generic.List<TbPlayCfg>")]
-           public partial nint PLAY_CFG_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbPlayCfg.Ptr_TbPlayCfg> PLAY_CFG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0xA0 System.Collections.Generic.List<TbActCfg> actList
@@ -298,10 +298,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbRoleCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("roleList", "System.Collections.Generic.List<TbRoleCfg>")]
-           public partial nint ROLE_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbRoleCfg.Ptr_TbRoleCfg> ROLE_LIST { get; set; } 
+
 
             /// <summary>
             /// 0xC0 System.Collections.Generic.List<TbPracCfg> pracList
@@ -318,10 +318,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbAttribCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribList", "System.Collections.Generic.List<TbAttribCfg>")]
-           public partial nint ATTRIB_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbAttribCfg.Ptr_TbAttribCfg> ATTRIB_LIST { get; set; } 
+
 
             /// <summary>
             /// 0xD0 System.Collections.Generic.List<TbEnemyCfg> enemyList
@@ -368,20 +368,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbSectCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("sectList", "System.Collections.Generic.List<TbSectCfg>")]
-           public partial nint SECT_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbSectCfg.Ptr_TbSectCfg> SECT_LIST { get; set; } 
+
 
             /// <summary>
             /// 0xF8 System.Collections.Generic.List<TbPostCfg> postList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbPostCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("postList", "System.Collections.Generic.List<TbPostCfg>")]
-           public partial nint POST_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbPostCfg.Ptr_TbPostCfg> POST_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x100 System.Collections.Generic.List<TbEndRewardCfg> endRewardList
@@ -428,30 +428,30 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbTypeCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeCfgList", "System.Collections.Generic.List<TbTypeCfg>")]
-           public partial nint TYPE_CFG_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbTypeCfg.Ptr_TbTypeCfg> TYPE_CFG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x128 System.Collections.Generic.List<TbGradeCfg> gradeCfgList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbGradeCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeCfgList", "System.Collections.Generic.List<TbGradeCfg>")]
-           public partial nint GRADE_CFG_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbGradeCfg.Ptr_TbGradeCfg> GRADE_CFG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x130 System.Collections.Generic.List<TbValueCfg> valueCfgList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbValueCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("valueCfgList", "System.Collections.Generic.List<TbValueCfg>")]
-           public partial nint VALUE_CFG_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbValueCfg.Ptr_TbValueCfg> VALUE_CFG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x138 System.Collections.Generic.List<TbArtCfg> artList
@@ -568,10 +568,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbStateCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("stateList", "System.Collections.Generic.List<TbStateCfg>")]
-           public partial nint STATE_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbStateCfg.Ptr_TbStateCfg> STATE_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x198 System.Collections.Generic.List<TbRandomCfg> RandomList
@@ -768,10 +768,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbSuitCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("suitList", "System.Collections.Generic.List<TbSuitCfg>")]
-           public partial nint SUIT_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbSuitCfg.Ptr_TbSuitCfg> SUIT_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x238 System.Collections.Generic.List<FunctionGroup> functionGroupList

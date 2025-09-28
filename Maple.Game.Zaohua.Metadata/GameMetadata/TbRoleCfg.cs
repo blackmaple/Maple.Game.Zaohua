@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -60,10 +62,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.Int32")]
             public partial System.Int32 ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x2C System.Int32 npcId
@@ -133,26 +135,26 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.String get_GetName()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetName", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_NAME(); 
-*/
+            public partial PMonoString GET_GET_NAME(); 
+
             /// <summary>
             ///   System.String get_GetRoleName()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetRoleName", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_ROLE_NAME(); 
-*/
+            public partial PMonoString GET_GET_ROLE_NAME(); 
+
             /// <summary>
             ///   System.String get_GetSurname()
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetSurname", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-            public partial nint GET_GET_SURNAME(); 
-*/
+            public partial PMonoString GET_GET_SURNAME(); 
+
         }
     }
 }

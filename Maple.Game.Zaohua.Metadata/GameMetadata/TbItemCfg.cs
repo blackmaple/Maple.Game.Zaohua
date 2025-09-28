@@ -312,20 +312,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeId", "System.Int32")]
            public partial System.Int32 TYPE_ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xEC System.Int32 gradeId
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeId", "System.Int32")]
            public partial System.Int32 GRADE_ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xF0 System.Int32 attribute

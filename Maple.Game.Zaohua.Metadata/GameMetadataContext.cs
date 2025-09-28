@@ -7,25 +7,43 @@ namespace Maple.Game.Zaohua.Metadata
 
 
     //[ContextMemberMetadata<BlendId>]
-    [ContextMemberMetadata<BsBagImpl>]
     [ContextMemberMetadata<BsSaveDataImpl>]
+    [ContextMemberMetadata<BsBagImpl>]
+    [ContextMemberMetadata<TbPackSto>]
+
     [ContextMemberMetadata<TbActor>]
     [ContextMemberMetadata<TbDantianImpl>]
     [ContextMemberMetadata<TbDataImpl>]
-    [ContextMemberMetadata<TbEquipEffectCfg>]
+    [ContextMemberMetadata<TbItemImpl>]
+
+    [ContextMemberMetadata<TbMagicImpl>]
+    [ContextMemberMetadata<TbMagicSto>]
+
+    [ContextMemberMetadata<TbNpcImpl>]
+    [ContextMemberMetadata<TbNpcSto>]
+
+    [ContextMemberMetadata<TbPlayerImpl>]
+    [ContextMemberMetadata<TbPlayerSto>]
+    [ContextMemberMetadata<TbStateImpl>]
+
+    [ContextMemberMetadata<TbAttribCfg>]
+    //[ContextMemberMetadata<TbEquipEffectCfg>]
     //[ContextMemberMetadata<TbFunctionCfg>]
     [ContextMemberMetadata<TbGradeCfg>]
     [ContextMemberMetadata<TbItemCfg>]
-    [ContextMemberMetadata<TbItemImpl>]
     [ContextMemberMetadata<TbLvCfg>]
     [ContextMemberMetadata<TbMagicCfg>]
-    [ContextMemberMetadata<TbMagicImpl>]
-    [ContextMemberMetadata<TbNpcImpl>]
-    [ContextMemberMetadata<TbNpcSto>]
-    [ContextMemberMetadata<TbPlayerImpl>]
-    [ContextMemberMetadata<TbPlayerSto>]
     [ContextMemberMetadata<TbRoleCfg>]
     [ContextMemberMetadata<TbTypeCfg>]
+    //[ContextMemberMetadata<TbNameCfg>]
+    //[ContextMemberMetadata<TbPlayCfg>]
+    [ContextMemberMetadata<TbSectCfg>]
+    //[ContextMemberMetadata<TbSuitCfg>]
+    //[ContextMemberMetadata<TbWeatherCfg>]
+
+    //[ContextMemberMetadata<TbStateCfg>]
+    [ContextMemberMetadata<TbPostCfg>]
+    
     public partial class GameMetadataContext
     {
 

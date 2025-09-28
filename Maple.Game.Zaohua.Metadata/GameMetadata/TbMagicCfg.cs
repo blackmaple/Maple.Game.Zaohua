@@ -419,10 +419,10 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.String get_GetIntroduce()
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetIntroduce", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-           public partial nint GET_GET_INTRODUCE(); 
-*/
+           public partial PMonoString GET_GET_INTRODUCE(); 
+
             /// <summary>
             ///   System.String get_GetName()
             /// </summary>

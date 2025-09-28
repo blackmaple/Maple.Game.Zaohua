@@ -4,6 +4,7 @@ using Maple.MonoGameAssistant.GameDTO;
 using Maple.MonoGameAssistant.Model;
 using Maple.MonoGameAssistant.Windows.HotKey.HookWindowMessage;
 using Maple.MonoGameAssistant.Windows.Service;
+using Maple.MonoGameAssistant.Windows.UITask;
 using Microsoft.Extensions.Logging;
 
 namespace Maple.Game.Zaohua.Win

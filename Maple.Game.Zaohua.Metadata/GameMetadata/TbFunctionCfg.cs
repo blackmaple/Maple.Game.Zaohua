@@ -92,10 +92,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.Int32")]
             public partial System.Int32 ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x44 System.Int32 type
