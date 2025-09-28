@@ -11,8 +11,8 @@ namespace Maple.Game.Zaohua.Metadata
         public GameMetadataContext Context { get; }
         public ILogger Logger => Context.Logger;
 
-        public GameInventoryDisplayDTO[] GameInventories { get; }
-        public GameSkillDisplayDTO[] GameSkills { get; }
+        public GameInventoryDisplayDTOEX[] GameInventories { get; }
+        public GameSkillDisplayDTOEX[] GameSkills { get; }
         public GameResourceCache(GameMetadataContext context)
         {
             this.Context = context;
@@ -22,7 +22,7 @@ namespace Maple.Game.Zaohua.Metadata
 
         }
 
-        public IEnumerable<GameInventoryDisplayDTO> LoadItems(Ptr_TbDataImpl ptr_dataImpl)
+        public IEnumerable<GameInventoryDisplayDTOEX> LoadItems(Ptr_TbDataImpl ptr_dataImpl)
         {
             foreach (var item in ptr_dataImpl.ITEM_CFG_LIST.AsEnumerable())
             {
@@ -33,7 +33,7 @@ namespace Maple.Game.Zaohua.Metadata
             }
             yield break;
         }
-        public IEnumerable<GameSkillDisplayDTO> LoadSkills(Ptr_TbDataImpl ptr_dataImpl)
+        public IEnumerable<GameSkillDisplayDTOEX> LoadSkills(Ptr_TbDataImpl ptr_dataImpl)
         {
             foreach (var item in ptr_dataImpl.MAGIC_LIST.AsEnumerable())
             {
@@ -62,5 +62,17 @@ namespace Maple.Game.Zaohua.Metadata
             SpinWait.SpinUntil(() => TbDataImpl.Ptr_TbDataImpl.M_INSTANCE.IsNotNull());
             return new GameResourceCache(context);
         }
+    }
+
+
+
+    public class GameInventoryDisplayDTOEX : GameInventoryDisplayDTO
+    {
+        public nint ObjectPointer { get; set; }
+    }
+
+    public class GameSkillDisplayDTOEX : GameSkillDisplayDTO
+    {
+        public nint ObjectPointer { get; set; }
     }
 }

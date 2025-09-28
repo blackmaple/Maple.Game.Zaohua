@@ -32,9 +32,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("name", "System.String")]
-            public partial nint NAME { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("name", "System.String")]
+           public partial nint NAME { get; set; } 
 */
 
             /// <summary>
@@ -42,9 +42,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("iconPath", "System.String")]
-            public partial nint ICON_PATH { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("iconPath", "System.String")]
+           public partial nint ICON_PATH { get; set; } 
 */
 
             /// <summary>
@@ -52,9 +52,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("des", "System.String")]
-            public partial nint DES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("des", "System.String")]
+           public partial nint DES { get; set; } 
 */
 
             /// <summary>
@@ -62,9 +62,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("effDes", "System.String")]
-            public partial nint EFF_DES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("effDes", "System.String")]
+           public partial nint EFF_DES { get; set; } 
 */
 
             /// <summary>
@@ -72,9 +72,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attEff", "System.String")]
-            public partial nint ATT_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attEff", "System.String")]
+           public partial nint ATT_EFF { get; set; } 
 */
 
             /// <summary>
@@ -82,9 +82,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("armorEff", "System.String")]
-            public partial nint ARMOR_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("armorEff", "System.String")]
+           public partial nint ARMOR_EFF { get; set; } 
 */
 
             /// <summary>
@@ -92,9 +92,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("hpEff", "System.String")]
-            public partial nint HP_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("hpEff", "System.String")]
+           public partial nint HP_EFF { get; set; } 
 */
 
             /// <summary>
@@ -102,9 +102,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("energyEff", "System.String")]
-            public partial nint ENERGY_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("energyEff", "System.String")]
+           public partial nint ENERGY_EFF { get; set; } 
 */
 
             /// <summary>
@@ -112,9 +112,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribEff", "System.String")]
-            public partial nint ATTRIB_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribEff", "System.String")]
+           public partial nint ATTRIB_EFF { get; set; } 
 */
 
             /// <summary>
@@ -122,9 +122,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("limitEff", "System.String")]
-            public partial nint LIMIT_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("limitEff", "System.String")]
+           public partial nint LIMIT_EFF { get; set; } 
 */
 
             /// <summary>
@@ -132,9 +132,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("stateEff", "System.String")]
-            public partial nint STATE_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("stateEff", "System.String")]
+           public partial nint STATE_EFF { get; set; } 
 */
 
             /// <summary>
@@ -142,9 +142,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useEff", "System.String")]
-            public partial nint USE_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useEff", "System.String")]
+           public partial nint USE_EFF { get; set; } 
 */
 
             /// <summary>
@@ -152,9 +152,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipEff", "System.String")]
-            public partial nint EQUIP_EFF { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipEff", "System.String")]
+           public partial nint EQUIP_EFF { get; set; } 
 */
 
             /// <summary>
@@ -162,9 +162,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("npcList", "System.String")]
-            public partial nint NPC_LIST { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("npcList", "System.String")]
+           public partial nint NPC_LIST { get; set; } 
 */
 
             /// <summary>
@@ -172,9 +172,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("actId", "System.String")]
-            public partial nint ACT_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("actId", "System.String")]
+           public partial nint ACT_ID { get; set; } 
 */
 
             /// <summary>
@@ -182,9 +182,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("effectType", "System.String")]
-            public partial nint EFFECT_TYPE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("effectType", "System.String")]
+           public partial nint EFFECT_TYPE { get; set; } 
 */
 
             /// <summary>
@@ -192,9 +192,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipNotes", "System.String")]
-            public partial nint EQUIP_NOTES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipNotes", "System.String")]
+           public partial nint EQUIP_NOTES { get; set; } 
 */
 
             /// <summary>
@@ -202,9 +202,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("limitNotes", "System.String")]
-            public partial nint LIMIT_NOTES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("limitNotes", "System.String")]
+           public partial nint LIMIT_NOTES { get; set; } 
 */
 
             /// <summary>
@@ -212,9 +212,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useNotes", "System.String")]
-            public partial nint USE_NOTES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useNotes", "System.String")]
+           public partial nint USE_NOTES { get; set; } 
 */
 
             /// <summary>
@@ -222,9 +222,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("selfNotes", "System.String")]
-            public partial nint SELF_NOTES { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("selfNotes", "System.String")]
+           public partial nint SELF_NOTES { get; set; } 
 */
 
             /// <summary>
@@ -232,9 +232,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("tlNodeId", "System.String")]
-            public partial nint TL_NODE_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("tlNodeId", "System.String")]
+           public partial nint TL_NODE_ID { get; set; } 
 */
 
             /// <summary>
@@ -242,9 +242,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<EffTypeEnum></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("skillTypeList", "System.Collections.Generic.List<EffTypeEnum>")]
-            public partial nint SKILL_TYPE_LIST { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("skillTypeList", "System.Collections.Generic.List<EffTypeEnum>")]
+           public partial nint SKILL_TYPE_LIST { get; set; } 
 */
 
             /// <summary>
@@ -252,9 +252,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbTypeCfg"]
             /// </summary>
             /// <returns>class TbTypeCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edTypeCfg", "TbTypeCfg")]
-            public partial nint ED_TYPE_CFG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edTypeCfg", "TbTypeCfg")]
+           public partial nint ED_TYPE_CFG { get; set; } 
 */
 
             /// <summary>
@@ -262,9 +262,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbArtCfg"]
             /// </summary>
             /// <returns>class TbArtCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edArtCfg", "TbArtCfg")]
-            public partial nint ED_ART_CFG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edArtCfg", "TbArtCfg")]
+           public partial nint ED_ART_CFG { get; set; } 
 */
 
             /// <summary>
@@ -272,9 +272,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbMagicCfg"]
             /// </summary>
             /// <returns>class TbMagicCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edMagicCfg", "TbMagicCfg")]
-            public partial nint ED_MAGIC_CFG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edMagicCfg", "TbMagicCfg")]
+           public partial nint ED_MAGIC_CFG { get; set; } 
 */
 
             /// <summary>
@@ -282,9 +282,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbGradeCfg"]
             /// </summary>
             /// <returns>class TbGradeCfg</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edGradeCfg", "TbGradeCfg")]
-            public partial nint ED_GRADE_CFG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("edGradeCfg", "TbGradeCfg")]
+           public partial nint ED_GRADE_CFG { get; set; } 
 */
 
             /// <summary>
@@ -292,19 +292,19 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.Int32")]
-            public partial System.Int32 ID { get; set; } 
-*/
+            public partial System.Int32 ID { get; set; }
+
 
             /// <summary>
             /// 0xE4 System.Int32 npcUse
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("npcUse", "System.Int32")]
-            public partial System.Int32 NPC_USE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("npcUse", "System.Int32")]
+           public partial System.Int32 NPC_USE { get; set; } 
 */
 
             /// <summary>
@@ -312,9 +312,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeId", "System.Int32")]
-            public partial System.Int32 TYPE_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeId", "System.Int32")]
+           public partial System.Int32 TYPE_ID { get; set; } 
 */
 
             /// <summary>
@@ -322,9 +322,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeId", "System.Int32")]
-            public partial System.Int32 GRADE_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeId", "System.Int32")]
+           public partial System.Int32 GRADE_ID { get; set; } 
 */
 
             /// <summary>
@@ -332,9 +332,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribute", "System.Int32")]
-            public partial System.Int32 ATTRIBUTE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribute", "System.Int32")]
+           public partial System.Int32 ATTRIBUTE { get; set; } 
 */
 
             /// <summary>
@@ -342,9 +342,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("energy", "System.Int32")]
-            public partial System.Int32 ENERGY { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("energy", "System.Int32")]
+           public partial System.Int32 ENERGY { get; set; } 
 */
 
             /// <summary>
@@ -352,9 +352,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("maxCount", "System.Int32")]
-            public partial System.Int32 MAX_COUNT { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("maxCount", "System.Int32")]
+           public partial System.Int32 MAX_COUNT { get; set; } 
 */
 
             /// <summary>
@@ -362,9 +362,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("price", "System.Int32")]
-            public partial System.Int32 PRICE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("price", "System.Int32")]
+           public partial System.Int32 PRICE { get; set; } 
 */
 
             /// <summary>
@@ -372,9 +372,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("augment", "System.Int32")]
-            public partial System.Int32 AUGMENT { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("augment", "System.Int32")]
+           public partial System.Int32 AUGMENT { get; set; } 
 */
 
             /// <summary>
@@ -382,9 +382,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("efficacy", "System.Int32")]
-            public partial System.Int32 EFFICACY { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("efficacy", "System.Int32")]
+           public partial System.Int32 EFFICACY { get; set; } 
 */
 
             /// <summary>
@@ -392,9 +392,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("consume", "System.Int32")]
-            public partial System.Int32 CONSUME { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("consume", "System.Int32")]
+           public partial System.Int32 CONSUME { get; set; } 
 */
 
             /// <summary>
@@ -402,9 +402,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("lingqi", "System.Int32")]
-            public partial System.Int32 LINGQI { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("lingqi", "System.Int32")]
+           public partial System.Int32 LINGQI { get; set; } 
 */
 
             /// <summary>
@@ -412,9 +412,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("noRemove", "System.Int32")]
-            public partial System.Int32 NO_REMOVE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("noRemove", "System.Int32")]
+           public partial System.Int32 NO_REMOVE { get; set; } 
 */
 
             /// <summary>
@@ -422,9 +422,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("drugMax", "System.Int32")]
-            public partial System.Int32 DRUG_MAX { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("drugMax", "System.Int32")]
+           public partial System.Int32 DRUG_MAX { get; set; } 
 */
 
             /// <summary>
@@ -432,9 +432,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("disTime", "System.Int32")]
-            public partial System.Int32 DIS_TIME { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("disTime", "System.Int32")]
+           public partial System.Int32 DIS_TIME { get; set; } 
 */
 
             /// <summary>
@@ -442,9 +442,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsShop", "System.Int32")]
-            public partial System.Int32 IS_SHOP { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsShop", "System.Int32")]
+           public partial System.Int32 IS_SHOP { get; set; } 
 */
 
             /// <summary>
@@ -452,9 +452,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsTrader", "System.Int32")]
-            public partial System.Int32 IS_TRADER { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsTrader", "System.Int32")]
+           public partial System.Int32 IS_TRADER { get; set; } 
 */
 
             /// <summary>
@@ -462,19 +462,19 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsBlack", "System.Int32")]
-            public partial System.Int32 IS_BLACK { get; set; } 
-*/
+            public partial System.Int32 IS_BLACK { get; set; }
+
 
             /// <summary>
             /// 0x128 System.Int32 IsReward
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsReward", "System.Int32")]
-            public partial System.Int32 IS_REWARD { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("IsReward", "System.Int32")]
+           public partial System.Int32 IS_REWARD { get; set; } 
 */
 
             /// <summary>
@@ -482,9 +482,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("suitId", "System.Int32")]
-            public partial System.Int32 SUIT_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("suitId", "System.Int32")]
+           public partial System.Int32 SUIT_ID { get; set; } 
 */
 
             /// <summary>
@@ -492,9 +492,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useFlag", "System.Int32")]
-            public partial System.Int32 USE_FLAG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("useFlag", "System.Int32")]
+           public partial System.Int32 USE_FLAG { get; set; } 
 */
 
             /// <summary>
@@ -502,9 +502,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("haveCount", "System.Int64")]
-            public partial System.Int64 HAVE_COUNT { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("haveCount", "System.Int64")]
+           public partial System.Int64 HAVE_COUNT { get; set; } 
 */
 
             /// <summary>
@@ -512,29 +512,29 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("block", "System.Int32")]
-            public partial System.Int32 BLOCK { get; set; } 
-*/
+            public partial System.Int32 BLOCK { get; set; }
+
 
             /// <summary>
             /// 0x144 BlendEnum blendEnum
             /// enum ["Assembly-CSharp".""."BlendEnum"]
             /// </summary>
             /// <returns>enum BlendEnum</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("blendEnum", "BlendEnum")]
-            public partial BlendEnum BLEND_ENUM { get; set; } 
-*/
+            public partial BlendEnum BLEND_ENUM { get; set; }
+
 
             /// <summary>
             /// 0x148 EquipBitTag bitTag
             /// enum ["Assembly-CSharp".""."EquipBitTag"]
             /// </summary>
             /// <returns>enum EquipBitTag</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("bitTag", "EquipBitTag")]
-            public partial EquipBitTag BIT_TAG { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("bitTag", "EquipBitTag")]
+           public partial EquipBitTag BIT_TAG { get; set; } 
 */
         }
 
@@ -683,10 +683,10 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.String get_GetEffDes()
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-           public partial nint GET_GET_EFF_DES(); 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetEffDes", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+            public partial PMonoString GET_GET_EFF_DES();
+
             /// <summary>
             ///   System.Collections.Generic.List<EffTypeEnum> get_GetEffType()
             /// </summary>

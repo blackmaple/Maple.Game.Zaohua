@@ -17,7 +17,7 @@ namespace Maple.Game.Zaohua.Metadata
 
             public static implicit operator Ptr_BsSaveDataImpl(System.IntPtr ptr) => new Ptr_BsSaveDataImpl(ptr);
             public static implicit operator System.IntPtr(Ptr_BsSaveDataImpl ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_BsSaveDataImpl ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator bool(Ptr_BsSaveDataImpl ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
@@ -30,25 +30,25 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            public const System.Int32 MAX_CHARACTER_COUNT = 9; 
+            /*
+           public const System.Int32 MAX_CHARACTER_COUNT = 9; 
 */
             /// <summary>
             /// 0x0 System.Int32 MAX_SAVE_COUNT
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            public const System.Int32 MAX_SAVE_COUNT = 20; 
+            /*
+           public const System.Int32 MAX_SAVE_COUNT = 20; 
 */
             /// <summary>
             /// 0x0 System.Collections.Generic.List<TbSaveDataAll> SaveDataList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbSaveDataAll></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SaveDataList", "System.Collections.Generic.List<TbSaveDataAll>")]
-            public static partial nint SAVE_DATA_LIST { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SaveDataList", "System.Collections.Generic.List<TbSaveDataAll>")]
+           public static partial nint SAVE_DATA_LIST { get; set; } 
 */
 
             /// <summary>
@@ -56,9 +56,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."BsSaveDataImpl"]
             /// </summary>
             /// <returns>class BsSaveDataImpl</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Instance", "BsSaveDataImpl")]
-            public static partial nint M_INSTANCE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Instance", "BsSaveDataImpl")]
+           public static partial nint M_INSTANCE { get; set; } 
 */
 
             /// <summary>
@@ -66,9 +66,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SelectedCharacterId", "System.Int32")]
-            public static partial System.Int32 SELECTED_CHARACTER_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SelectedCharacterId", "System.Int32")]
+           public static partial System.Int32 SELECTED_CHARACTER_ID { get; set; } 
 */
 
             /// <summary>
@@ -76,9 +76,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Lock", "System.String")]
-            public static partial nint M_LOCK { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Lock", "System.String")]
+           public static partial nint M_LOCK { get; set; } 
 */
 
             /// <summary>
@@ -86,19 +86,19 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbActor"]
             /// </summary>
             /// <returns>class TbActor</returns>
-             /*
+
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("nowActor", "TbActor")]
-            public static partial nint NOW_ACTOR { get; set; } 
-*/
+            public static partial TbActor.Ptr_TbActor NOW_ACTOR { get; set; }
+
 
             /// <summary>
             /// 0x10 System.String preActor
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("preActor", "System.String")]
-            public partial nint PRE_ACTOR { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("preActor", "System.String")]
+           public partial nint PRE_ACTOR { get; set; } 
 */
 
             /// <summary>
@@ -106,9 +106,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SAVE_FILEPATH", "System.String")]
-            public partial nint SAVE_FILEPATH { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SAVE_FILEPATH", "System.String")]
+           public partial nint SAVE_FILEPATH { get; set; } 
 */
 
             /// <summary>
@@ -116,9 +116,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbEndRewardAll"]
             /// </summary>
             /// <returns>class TbEndRewardAll</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("endRewardAll", "TbEndRewardAll")]
-            public partial nint END_REWARD_ALL { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("endRewardAll", "TbEndRewardAll")]
+           public partial nint END_REWARD_ALL { get; set; } 
 */
 
             /// <summary>
@@ -126,9 +126,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbQuickKeyAll></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("quickKeyAll", "System.Collections.Generic.List<TbQuickKeyAll>")]
-            public partial nint QUICK_KEY_ALL { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("quickKeyAll", "System.Collections.Generic.List<TbQuickKeyAll>")]
+           public partial nint QUICK_KEY_ALL { get; set; } 
 */
 
             /// <summary>
@@ -136,9 +136,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbStoryLineAll></returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("storyLineDatas", "System.Collections.Generic.List<TbStoryLineAll>")]
-            public partial nint STORY_LINE_DATAS { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("storyLineDatas", "System.Collections.Generic.List<TbStoryLineAll>")]
+           public partial nint STORY_LINE_DATAS { get; set; } 
 */
 
             /// <summary>
@@ -146,9 +146,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// enum ["Assembly-CSharp".""."SerializableEnum"]
             /// </summary>
             /// <returns>enum SerializableEnum</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SAVE_SERIALIZABLE_TYPE", "SerializableEnum")]
-            public partial SerializableEnum SAVE_SERIALIZABLE_TYPE { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("SAVE_SERIALIZABLE_TYPE", "SerializableEnum")]
+           public partial SerializableEnum SAVE_SERIALIZABLE_TYPE { get; set; } 
 */
 
             /// <summary>
@@ -156,9 +156,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("enterGameTime", "System.Int64")]
-            public partial System.Int64 ENTER_GAME_TIME { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("enterGameTime", "System.Int64")]
+           public partial System.Int64 ENTER_GAME_TIME { get; set; } 
 */
 
             /// <summary>
@@ -166,9 +166,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("characterId", "System.Int32")]
-            public partial System.Int32 CHARACTER_ID { get; set; } 
+            /*
+           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("characterId", "System.Int32")]
+           public partial System.Int32 CHARACTER_ID { get; set; } 
 */
         }
 
