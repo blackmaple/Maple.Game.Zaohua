@@ -52,10 +52,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("path", "System.String")]
-           public partial nint PATH { get; set; } 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("path", "System.String")]
+            public partial PMonoString PATH { get; set; }
+
 
             /// <summary>
             /// 0x28 System.String introduce
@@ -419,9 +419,9 @@ namespace Maple.Game.Zaohua.Metadata
             ///   System.String get_GetIntroduce()
             /// </summary>
             /// <returns>class System.String</returns>
-            
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetIntroduce", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
-           public partial PMonoString GET_GET_INTRODUCE(); 
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("get_GetIntroduce", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
+            public partial PMonoString GET_GET_INTRODUCE();
 
             /// <summary>
             ///   System.String get_GetName()

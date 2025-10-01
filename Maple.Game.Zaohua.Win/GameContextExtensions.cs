@@ -13,7 +13,7 @@ namespace Maple.Game.Zaohua.Win
         {
             var webapp = WebApiServiceExtensions.AsRunWebApiService(p =>
             {
-                p.GameName = "今古群侠传";
+                p.GameName = "造化仙缘";
                 p.QQ = "QQ:75351663/QQGroup:41426227";
                 p.Http = true;
                 p.NamedPipe = true;

@@ -27,5 +27,10 @@ namespace Maple.Game.Zaohua.Metadata
             }
             return new GameCheatService(c, ptr_TbActor);
         }
+
+        public IEnumerable<GameCharacterDisplayDTO> GetGameCharacters()
+        {
+            var actor = this.Ptr_TbActor._PLAYER_STO.
+        }
     }
 }

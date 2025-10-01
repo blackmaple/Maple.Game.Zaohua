@@ -1,9 +1,11 @@
 ﻿using Maple.MonoGameAssistant.Common;
+using Maple.MonoGameAssistant.Core;
 using Maple.MonoGameAssistant.GameDTO;
 using Maple.MonoGameAssistant.MetadataCollections;
 using Maple.MonoGameAssistant.MetadataExtensions.MetadataCollector;
 using Microsoft.Extensions.Logging;
 using System.Linq;
+using static Maple.Game.Zaohua.Metadata.BsSaveDataImpl;
 using static Maple.Game.Zaohua.Metadata.TbDataImpl;
 
 namespace Maple.Game.Zaohua.Metadata
@@ -15,14 +17,18 @@ namespace Maple.Game.Zaohua.Metadata
 
         public GameInventoryDisplayDTOEX[] GameInventories { get; }
         public GameSkillDisplayDTOEX[] GameSkills { get; }
-
         public GameObjectDisplayDTOEX[] GameObjects { get; }
+        public Dictionary<string, GameValueInfoDTOEX[]> GameKeyValues { get; }
+
+
         public GameResourceCache(GameMetadataContext context)
         {
             this.Context = context;
             var ptr_dataImpl = TbDataImpl.Ptr_TbDataImpl.M_INSTANCE;
 
             this.GameObjects = [.. LoadResource(ptr_dataImpl)];
+            this.GameKeyValues = this.GameObjects.GroupBy(p => p.DisplayCategory!).ToDictionary(p => p.Key!, p => p.Select(p => p.Conv()).ToArray());
+
             this.GameInventories = [.. LoadItems(ptr_dataImpl)];
             this.GameSkills = [.. LoadSkills(ptr_dataImpl)];
             foreach (var item in this.GameObjects)
@@ -47,13 +53,15 @@ namespace Maple.Game.Zaohua.Metadata
                 var name = item.GET_GET_NAME().ToString();
                 var desc = item.GET_GET_DES().ToString();
                 var effDesc = item.GET_GET_EFF_DES().ToString();
+                var id = item.ID.ToString();
                 yield return new GameInventoryDisplayDTOEX()
                 {
                     ObjectPointer = item,
-                    ObjectId = item.ID.ToString(),
-                    DisplayName = name,
-                    DisplayCategory = GetObjectDisplayCategory(nameof(TbItemCfg), item.TYPE_ID, item.GRADE_ID),
+                    ObjectId = id,
+                    DisplayName = GetObjectDisplayName(name, item.TYPE_ID, item.GRADE_ID),
+                    DisplayCategory = nameof(TbItemCfg),
                     DisplayDesc = $"{desc} {effDesc}",
+                    //              DisplayImage = $"{nameof(TbItemCfg)}/{id}.png"
                 };
 
             }
@@ -66,13 +74,17 @@ namespace Maple.Game.Zaohua.Metadata
 
                 var name = item.GET_GET_NAME().ToString();
                 var desc = item.GET_GET_EFF_DES().ToString();
+                var id = item.ID.ToString();
+
                 yield return new GameSkillDisplayDTOEX()
                 {
                     ObjectPointer = item,
-                    ObjectId = item.ID.ToString(),
-                    DisplayName = name,
-                    DisplayCategory = GetObjectDisplayCategory(nameof(TbMagicCfg), item.TYPE, item.GRADE_ID),
+                    ObjectId = id,
+                    DisplayName = GetObjectDisplayName(name, item.TYPE, item.GRADE_ID),
+                    DisplayCategory = nameof(TbMagicCfg),
                     DisplayDesc = desc,
+                    //        DisplayImage = $"{nameof(TbMagicCfg)}/{id}.png"
+
                 };
 
 
@@ -86,7 +98,6 @@ namespace Maple.Game.Zaohua.Metadata
 
         public IEnumerable<GameObjectDisplayDTOEX> LoadResource(Ptr_TbDataImpl ptr_dataImpl)
         {
-
 
             foreach (var item in ptr_dataImpl.ATTRIB_LIST.AsEnumerable())
             {
@@ -250,10 +261,13 @@ namespace Maple.Game.Zaohua.Metadata
         {
             //      Thread.Sleep(5000);
             SpinWait.SpinUntil(() => TbDataImpl.Ptr_TbDataImpl.M_INSTANCE.IsNotNull());
+            SpinWait.SpinUntil(() => BsSaveDataImpl.Ptr_BsSaveDataImpl.M_INSTANCE.IsNotNull());
+
+
             return new GameResourceCache(context);
         }
 
-        private IEnumerable<string?> SearchObjectDisplayCategory(int type_id, int grade_id)
+        private IEnumerable<string?> SearchObjectDisplayName(int type_id, int grade_id)
         {
             var txt_type_id = type_id.ToString();
             var typeObj = this.GameObjects.Where(p => p.DisplayCategory == nameof(TbTypeCfg) && p.ObjectId == txt_type_id).FirstOrDefault();
@@ -268,11 +282,80 @@ namespace Maple.Game.Zaohua.Metadata
                 yield return gradeObj.DisplayName;
             }
         }
-
-        private string GetObjectDisplayCategory(string? displayCategory, int type_id, int grade_id)
+        private string GetObjectDisplayName(string? displayName, int type_id, int grade_id)
         {
-            return string.Join('*', [displayCategory, .. SearchObjectDisplayCategory(type_id, grade_id)]);
+            return string.Join('*', [.. SearchObjectDisplayName(type_id, grade_id), displayName]);
         }
+
+        public IEnumerable<GameSpriteInfoDTO> LoadImage(Func<nint, byte[]> func)
+        {
+            //BsSaveDataImpl:GetDifficultImage+4c - 48 BA A06FCA533C020000 - mov rdx,0000023C53CA6FA0 { (1FAF0C4B8A8) }
+            //BsSaveDataImpl:GetDifficultImage+b4 - 48 BA 506FCA533C020000 - mov rdx,0000023C53CA6F50 { (1FAF0C4B8A8) }
+            //BsSaveDataImpl:GetDifficultImage+11c - 48 BA 006FCA533C020000 - mov rdx,0000023C53CA6F00 { (1FAF0C4B8A8) }
+            using (this.Logger.Running())
+            {
+                var oldPath = BsSaveDataImpl.Path;
+
+                var saveDataImpl = Ptr_BsSaveDataImpl.M_INSTANCE;
+
+                foreach (var item in this.GameInventories)
+                {
+                    var ptr = new TbItemCfg.Ptr_TbItemCfg(item.ObjectPointer);
+                    BsSaveDataImpl.Path = ptr.ICON_PATH;
+                    var image = saveDataImpl.GET_DIFFICULT_IMAGE(DifficultyEnum.Easy);
+                    var buffer = func(image);
+
+                    yield return new GameSpriteInfoDTO() { ObjectId = item.ObjectId, DisplayCategory = item.DisplayCategory, Buffer = buffer };
+                    yield break;
+                }
+
+                BsSaveDataImpl.Path = oldPath;
+            }
+
+
+
+        }
+
+        public IEnumerable<GameSpriteInfoDTO> LoadImage2()
+        {
+            //BsSaveDataImpl:GetDifficultImage+4c - 48 BA A06FCA533C020000 - mov rdx,0000023C53CA6FA0 { (1FAF0C4B8A8) }
+            //BsSaveDataImpl:GetDifficultImage+b4 - 48 BA 506FCA533C020000 - mov rdx,0000023C53CA6F50 { (1FAF0C4B8A8) }
+            //BsSaveDataImpl:GetDifficultImage+11c - 48 BA 006FCA533C020000 - mov rdx,0000023C53CA6F00 { (1FAF0C4B8A8) }
+            using (this.Logger.Running())
+            {
+                var oldPath = BsSaveDataImpl.Path;
+
+                var saveDataImpl = Ptr_BsSaveDataImpl.M_INSTANCE;
+
+                foreach (var item in this.GameInventories)
+                {
+                    var ptr = new TbItemCfg.Ptr_TbItemCfg(item.ObjectPointer);
+                    BsSaveDataImpl.Path = ptr.ICON_PATH;
+                    var image = saveDataImpl.GET_DIFFICULT_IMAGE(DifficultyEnum.Easy);
+                    if (image != nint.Zero)
+                    {
+                        yield return new GameSpriteInfoDTO() { ObjectId = item.ObjectId, DisplayCategory = item.DisplayCategory, Image = image };
+                    }
+
+                }
+                foreach (var item in this.GameSkills)
+                {
+                    var ptr = new TbMagicCfg.Ptr_TbMagicCfg(item.ObjectPointer);
+                    BsSaveDataImpl.Path = ptr.PATH;
+                    var image = saveDataImpl.GET_DIFFICULT_IMAGE(DifficultyEnum.Easy);
+                    if (image != nint.Zero)
+                    {
+                        yield return new GameSpriteInfoDTO() { ObjectId = item.ObjectId, DisplayCategory = item.DisplayCategory, Image = image };
+                    }
+                }
+                BsSaveDataImpl.Path = oldPath;
+            }
+
+
+
+        }
+
+
     }
 
 
@@ -296,7 +379,6 @@ namespace Maple.Game.Zaohua.Metadata
         }
     }
 
-
     public class GameObjectDisplayDTOEX : GameObjectDisplayDTO
     {
         public nint ObjectPointer { get; set; }
@@ -304,5 +386,41 @@ namespace Maple.Game.Zaohua.Metadata
         {
             return $"{this.ObjectId}|{this.DisplayCategory}|{this.DisplayName}|{this.DisplayDesc}";
         }
+
+        public GameValueInfoDTOEX Conv()
+        {
+            return new GameValueInfoDTOEX() { ObjectId = this.ObjectId, DisplayName = this.DisplayName, DisplayValue = this.ObjectId, ObjectPointer = this.ObjectPointer };
+        }
     }
+
+    public class GameValueInfoDTOEX : GameValueInfoDTO
+    {
+        public nint ObjectPointer { get; set; }
+        public override string ToString()
+        {
+            return $"{this.ObjectId}|{this.DisplayName}|{this.DisplayValue}";
+        }
+    }
+
+    public class GameSpriteInfoDTO : GameObjectDisplayDTO
+    {
+        public byte[]? Buffer { get; set; }
+
+        public nint Image { set; get; }
+    }
+
+    /// <summary>
+    /// 非常手段读取游戏内图片
+    /// </summary>
+    partial class BsSaveDataImpl
+    {
+        public unsafe static nint Pointer_GetDifficultImage => (nint)s_FunctionPointerType_GET_DIFFICULT_IMAGE_2F02844F62E1DECC.m_Pointer;
+        public static PMonoString Path
+        {
+            get => BsSaveDataImpl.GetMemberFieldValue<PMonoString>(Pointer_GetDifficultImage, 0x4c + 2);
+            set => BsSaveDataImpl.SetMemberFieldValue<PMonoString>(Pointer_GetDifficultImage, 0x4c + 2, value);
+        }
+    }
+
+
 }

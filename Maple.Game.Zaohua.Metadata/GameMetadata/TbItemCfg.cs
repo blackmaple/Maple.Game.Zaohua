@@ -42,10 +42,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-            /*
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("iconPath", "System.String")]
-           public partial nint ICON_PATH { get; set; } 
-*/
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("iconPath", "System.String")]
+            public partial PMonoString ICON_PATH { get; set; }
+
 
             /// <summary>
             /// 0x20 System.String des
@@ -312,9 +312,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeId", "System.Int32")]
-           public partial System.Int32 TYPE_ID { get; set; } 
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("typeId", "System.Int32")]
+            public partial System.Int32 TYPE_ID { get; set; }
 
 
             /// <summary>
@@ -322,9 +322,9 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-            
-           [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeId", "System.Int32")]
-           public partial System.Int32 GRADE_ID { get; set; } 
+
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("gradeId", "System.Int32")]
+            public partial System.Int32 GRADE_ID { get; set; }
 
 
             /// <summary>
