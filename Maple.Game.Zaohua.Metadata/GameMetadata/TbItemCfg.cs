@@ -502,10 +502,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("haveCount", "System.Int64")]
            public partial System.Int64 HAVE_COUNT { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x140 System.Int32 block

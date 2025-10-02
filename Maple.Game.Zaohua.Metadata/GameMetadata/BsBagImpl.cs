@@ -30,10 +30,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."BsBagImpl"]
             /// </summary>
             /// <returns>class BsBagImpl</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Instance", "BsBagImpl")]
-            public static partial nint M_INSTANCE { get; set; } 
-*/
+            public static partial Ptr_BsBagImpl M_INSTANCE { get; set; } 
+
 
             /// <summary>
             /// 0x8 System.String m_Lock
@@ -99,7 +99,7 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "isLock">struct System.Boolean</param>
             /// <param name = "isShop">struct System.Boolean</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("AddPackSto", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("BlendId", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int64", 1)]
@@ -107,8 +107,8 @@ namespace Maple.Game.Zaohua.Metadata
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Boolean", 3)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Boolean", 4)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Boolean", 5)]
-            public partial void ADD_PACK_STO(BlendId itemId, System.Int64 number, System.Int32 npcStoId, System.Boolean isShowLog, System.Boolean isLock, System.Boolean isShop); 
-*/
+            public partial void ADD_PACK_STO(BlendId.Ref_BlendId itemId, System.Int64 number, System.Int32 npcStoId, System.Boolean isShowLog, System.Boolean isLock, System.Boolean isShop); 
+
             /// <summary>
             ///   TbPackSto AddPackStoOne(TbItemCfg itemCfg, System.Int32 flag, System.Int32 npcStoId, System.Boolean isBattle, System.Boolean isShowLog, System.Boolean isLock, System.Boolean isShop)
             /// </summary>
@@ -183,14 +183,14 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "npcStoId">struct System.Int32</param>
             /// <param name = "isShowLog">struct System.Boolean</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("DelPackSto", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("BlendId", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int64", 1)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 2)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Boolean", 3)]
-            public partial void DEL_PACK_STO(BlendId itemId, System.Int64 number, System.Int32 npcStoId, System.Boolean isShowLog); 
-*/
+            public partial void DEL_PACK_STO(BlendId.Ref_BlendId itemId, System.Int64 number, System.Int32 npcStoId, System.Boolean isShowLog); 
+
             /// <summary>
             ///   System.Void DelPackStoOneBy(System.Int32 npcId, BlendId itemId)
             /// </summary>

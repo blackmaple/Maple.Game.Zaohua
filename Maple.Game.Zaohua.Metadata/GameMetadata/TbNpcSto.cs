@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.Core;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -31,20 +33,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("name", "System.String")]
-            public partial nint NAME { get; set; } 
-*/
+            public partial PMonoString NAME { get; set; } 
+
 
             /// <summary>
             /// 0x18 System.String introduce
             /// class ["mscorlib"."System"."String"]
             /// </summary>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("introduce", "System.String")]
-            public partial nint INTRODUCE { get; set; } 
-*/
+            public partial PMonoString INTRODUCE { get; set; } 
+
 
             /// <summary>
             /// 0x20 System.String path
@@ -111,10 +113,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("id", "System.Int32")]
             public partial System.Int32 ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x54 System.Int32 npcId

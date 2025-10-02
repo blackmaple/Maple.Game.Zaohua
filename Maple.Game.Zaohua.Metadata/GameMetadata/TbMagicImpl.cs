@@ -30,10 +30,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbMagicImpl"]
             /// </summary>
             /// <returns>class TbMagicImpl</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Instance", "TbMagicImpl")]
-            public static partial nint M_INSTANCE { get; set; } 
-*/
+            public static partial Ptr_TbMagicImpl M_INSTANCE { get; set; } 
+
 
             /// <summary>
             /// 0x8 System.String m_Lock
@@ -90,11 +90,11 @@ namespace Maple.Game.Zaohua.Metadata
             /// </summary>
             /// <param name = "magicSto">class TbMagicSto</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("DelMagicSto", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("TbMagicSto", 0)]
-            public partial void DEL_MAGIC_STO(nint magicSto); 
-*/
+            public partial void DEL_MAGIC_STO(TbMagicSto.Ptr_TbMagicSto magicSto); 
+
             /// <summary>
             ///   System.Void DelMagicStoBy(System.Int32 _magicStoId)
             /// </summary>
@@ -133,12 +133,12 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "magicId">struct BlendId</param>
             /// <param name = "show">struct System.Boolean</param>
             /// <returns>class System.String</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("DoStudyMagicByMagicId", "System.String", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("BlendId", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Boolean", 1)]
-            public partial nint DO_STUDY_MAGIC_BY_MAGIC_ID(BlendId magicId, System.Boolean show); 
-*/
+            public partial nint DO_STUDY_MAGIC_BY_MAGIC_ID(BlendId.Ref_BlendId magicId, System.Boolean show); 
+
             /// <summary>
             ///   System.Void EqurpMagic(TbMagicSto newSto, System.Int32 _flag)
             /// </summary>

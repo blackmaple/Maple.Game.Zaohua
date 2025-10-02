@@ -50,20 +50,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["Assembly-CSharp".""."BlendId"]
             /// </summary>
             /// <returns>struct BlendId</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("itemId", "BlendId")]
-            public partial BlendId ITEM_ID { get; set; } 
-*/
+            public partial BlendId.Ref_BlendId ITEM_ID { get; set; } 
+
 
             /// <summary>
             /// 0x24 System.Int32 npcStoId
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("npcStoId", "System.Int32")]
             public partial System.Int32 NPC_STO_ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x28 System.Int32 shoopId
@@ -130,10 +130,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("haveCount", "System.Int64")]
             public partial System.Int64 HAVE_COUNT { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x50 System.Int64 shopCount

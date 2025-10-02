@@ -20,9 +20,14 @@ namespace Maple.Game.Zaohua.Metadata
         public GameObjectDisplayDTOEX[] GameObjects { get; }
         public Dictionary<string, GameValueInfoDTOEX[]> GameKeyValues { get; }
 
-
+        public static GameSkillInfoDTO[] EmptySkills { get; } =
+            [
+                new GameSkillInfoDTO() { ObjectId = string.Empty, DisplayCategory = nameof(TbMagicCfg), CanWrite = true },
+                new GameSkillInfoDTO() { ObjectId = string.Empty, DisplayCategory = nameof(TbArtCfg),   CanWrite = true },
+            ];
         public GameResourceCache(GameMetadataContext context)
         {
+
             this.Context = context;
             var ptr_dataImpl = TbDataImpl.Ptr_TbDataImpl.M_INSTANCE;
 
@@ -49,6 +54,8 @@ namespace Maple.Game.Zaohua.Metadata
         {
             foreach (var item in ptr_dataImpl.ITEM_CFG_LIST.AsEnumerable())
             {
+                item.BLOCK = 0;
+                item.HAVE_COUNT = long.MaxValue;
 
                 var name = item.GET_GET_NAME().ToString();
                 var desc = item.GET_GET_DES().ToString();
@@ -73,7 +80,8 @@ namespace Maple.Game.Zaohua.Metadata
             {
 
                 var name = item.GET_GET_NAME().ToString();
-                var desc = item.GET_GET_EFF_DES().ToString();
+                var desc = item.GET_GET_INTRODUCE().ToString();
+                var effDesc = item.GET_GET_EFF_DES().ToString();
                 var id = item.ID.ToString();
 
                 yield return new GameSkillDisplayDTOEX()
@@ -82,7 +90,7 @@ namespace Maple.Game.Zaohua.Metadata
                     ObjectId = id,
                     DisplayName = GetObjectDisplayName(name, item.TYPE, item.GRADE_ID),
                     DisplayCategory = nameof(TbMagicCfg),
-                    DisplayDesc = desc,
+                    DisplayDesc = $"{desc} {effDesc}",
                     //        DisplayImage = $"{nameof(TbMagicCfg)}/{id}.png"
 
                 };
@@ -90,7 +98,28 @@ namespace Maple.Game.Zaohua.Metadata
 
             }
 
-            //foreach(var item in ptr_dataImpl.MAGIC_LIST)
+            foreach (var item in ptr_dataImpl.ART_LIST.AsEnumerable())
+            {
+
+                var name = item.GET_GET_NAME().ToString();
+                var desc = item.GET_GET_INTRODUCE().ToString();
+                var effDesc = item.GET_GET_EFF_DES().ToString();
+                var id = item.ID.ToString();
+
+                yield return new GameSkillDisplayDTOEX()
+                {
+                    ObjectPointer = item,
+                    ObjectId = id,
+                    DisplayName = GetObjectDisplayName(name, item.TYPE, item.GRADE_ID),
+                    DisplayCategory = nameof(TbArtCfg),
+                    DisplayDesc = $"{desc} {effDesc}",
+                    //        DisplayImage = $"{nameof(TbMagicCfg)}/{id}.png"
+
+                };
+
+
+            }
+
 
 
             yield break;
@@ -251,6 +280,24 @@ namespace Maple.Game.Zaohua.Metadata
                     DisplayName = name,
                     DisplayCategory = nameof(TbPostCfg),
                     DisplayDesc = desc,
+                };
+            }
+
+
+            foreach (var item in ptr_dataImpl.TREE_CFG_LIST.AsEnumerable())
+            {
+                var name = item.GET_GET_NAME().ToString();
+                var desc = item.GET_GET_DES().ToString();
+                var desc2 = item.GET_GET_LIMIT_DES().ToString();
+
+
+                yield return new GameObjectDisplayDTOEX()
+                {
+                    ObjectPointer = item,
+                    ObjectId = item.ID.ToString(),
+                    DisplayName = name,
+                    DisplayCategory = nameof(TbTreeCfg),
+                    DisplayDesc = $"{desc} {desc2}",
                 };
             }
 

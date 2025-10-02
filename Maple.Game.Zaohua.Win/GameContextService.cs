@@ -113,6 +113,18 @@ namespace Maple.Game.Zaohua.Win
             return new ValueTask<GameInventoryDisplayDTO[]>(this.Cache.GameInventories);
         }
 
+        public sealed override async ValueTask<GameInventoryInfoDTO> GetInventoryInfoAsync(GameInventoryObjectDTO inventoryObjectDTO)
+        {
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.GetInventoryInfo(args.inventoryObjectDTO), (cheatService, inventoryObjectDTO)).ConfigureAwait(false);
+        }
+
+        public sealed override async ValueTask<GameInventoryInfoDTO> UpdateInventoryInfoAsync(GameInventoryModifyDTO inventoryObjectDTO)
+        {
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.UpdateInventoryInfo(args.inventoryObjectDTO), (cheatService, inventoryObjectDTO)).ConfigureAwait(false);
+        }
+
         public sealed override ValueTask<GameSkillDisplayDTO[]> GetListSkillDisplayAsync()
         {
             return new ValueTask<GameSkillDisplayDTO[]>(this.Cache.GameSkills);
@@ -121,7 +133,28 @@ namespace Maple.Game.Zaohua.Win
         public sealed override async ValueTask<GameCharacterDisplayDTO[]> GetListCharacterDisplayAsync()
         {
             var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
-            return GameException.Throw<GameCharacterDisplayDTO[]>("");
+            return await this.MonoTaskAsync((p, cheat) => cheat.GetGameCharacters().ToArray(), cheatService).ConfigureAwait(false);
+        }
+
+        public sealed override async ValueTask<GameCharacterSkillDTO> GetCharacterSkillAsync(GameCharacterObjectDTO characterObjectDTO)
+        {
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.GetGameCharacterSkills(args.characterObjectDTO), (cheatService, characterObjectDTO)).ConfigureAwait(false);
+        }
+        public sealed override ValueTask<GameCharacterStatusDTO> UpdateCharacterStatusAsync(GameCharacterModifyDTO characterModifyDTO)
+        {
+            return base.UpdateCharacterStatusAsync(characterModifyDTO);
+        }
+        public sealed override async ValueTask<GameCharacterSkillDTO> UpdateCharacterSkillAsync(GameCharacterModifyDTO characterModifyDTO)
+        {
+            var cheatService = await  GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.UpdateGameCharacterSkill(args.characterModifyDTO), (cheatService, characterModifyDTO)).ConfigureAwait(false);
+        }
+
+        public sealed override async ValueTask<GameCharacterStatusDTO> GetCharacterStatusAsync(GameCharacterObjectDTO characterObjectDTO)
+        {
+            var cheatService = await  GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.GetGameCharacterStatus(args.characterObjectDTO), (cheatService, characterObjectDTO)).ConfigureAwait(false);
         }
 
         public sealed override ValueTask<GameMonsterDisplayDTO[]> GetListMonsterDisplayAsync()

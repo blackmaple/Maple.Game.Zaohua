@@ -1,29 +1,29 @@
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
-    /// class ["Assembly-CSharp".""."TbMagicSto"]
+    /// class ["Assembly-CSharp".""."TbArtSto"]
     /// [System.Object]
     /// </summary>
-    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassParentMetadataAttribute<Maple.MonoGameAssistant.MetadataExtensions.MetadataCollector.ClassMetadataCollector<Ptr_TbMagicSto>, Ptr_TbMagicSto>]
-    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassModelMetadataAttribute("Assembly-CSharp", "", "TbMagicSto", "TbMagicSto")]
-    public partial class TbMagicSto
+    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassParentMetadataAttribute<Maple.MonoGameAssistant.MetadataExtensions.MetadataCollector.ClassMetadataCollector<Ptr_TbArtSto>, Ptr_TbArtSto>]
+    [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassModelMetadataAttribute("Assembly-CSharp", "", "TbArtSto", "TbArtSto")]
+    public partial class TbArtSto
     {
         [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
-        public unsafe readonly partial struct Ptr_TbMagicSto(System.IntPtr ptr) : Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.IPtrMetadata
+        public unsafe readonly partial struct Ptr_TbArtSto(System.IntPtr ptr) : Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.IPtrMetadata
         {
             [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.SysInt)]
             readonly System.IntPtr m_Pointer = ptr;
             public System.IntPtr Ptr => m_Pointer;
 
-            public static implicit operator Ptr_TbMagicSto(System.IntPtr ptr) => new Ptr_TbMagicSto(ptr);
-            public static implicit operator System.IntPtr(Ptr_TbMagicSto ptr) => ptr.m_Pointer;
-            public static implicit operator bool (Ptr_TbMagicSto ptr) => ptr.m_Pointer != System.IntPtr.Zero;
+            public static implicit operator Ptr_TbArtSto(System.IntPtr ptr) => new Ptr_TbArtSto(ptr);
+            public static implicit operator System.IntPtr(Ptr_TbArtSto ptr) => ptr.m_Pointer;
+            public static implicit operator bool (Ptr_TbArtSto ptr) => ptr.m_Pointer != System.IntPtr.Zero;
         }
 
         /// <summary>
-        /// class ["Assembly-CSharp".""."TbMagicSto"]
+        /// class ["Assembly-CSharp".""."TbArtSto"]
         /// </summary>
-        partial struct Ptr_TbMagicSto
+        partial struct Ptr_TbArtSto
         {
             /// <summary>
             /// 0x10 System.Int32 id
@@ -46,13 +46,13 @@ namespace Maple.Game.Zaohua.Metadata
 
 
             /// <summary>
-            /// 0x18 BlendId magicId
+            /// 0x18 BlendId artId
             /// struct ["Assembly-CSharp".""."BlendId"]
             /// </summary>
             /// <returns>struct BlendId</returns>
              
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("magicId", "BlendId")]
-            public partial BlendId.Ref_BlendId MAGIC_ID { get; set; } 
+            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("artId", "BlendId")]
+            public partial BlendId.Ref_BlendId ART_ID { get; set; } 
 
 
             /// <summary>
@@ -64,16 +64,6 @@ namespace Maple.Game.Zaohua.Metadata
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("flag", "System.Int32")]
             public partial System.Int32 FLAG { get; set; } 
 
-
-            /// <summary>
-            /// 0x24 System.Int32 epxNow
-            /// struct ["mscorlib"."System"."Int32"]
-            /// </summary>
-            /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("epxNow", "System.Int32")]
-            public partial System.Int32 EPX_NOW { get; set; } 
-*/
 
             /// <summary>
             /// 0x28 System.Int64 getTime
@@ -117,9 +107,9 @@ namespace Maple.Game.Zaohua.Metadata
         }
 
         /// <summary>
-        /// class ["Assembly-CSharp".""."TbMagicSto"]
+        /// class ["Assembly-CSharp".""."TbArtSto"]
         /// </summary>
-        partial struct Ptr_TbMagicSto
+        partial struct Ptr_TbArtSto
         {
             /// <summary>
             ///   System.Void .ctor()

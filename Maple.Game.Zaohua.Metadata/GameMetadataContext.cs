@@ -5,7 +5,7 @@ namespace Maple.Game.Zaohua.Metadata
 {
     [ContextParentMetadata<ContextMetadataCollector>(true)]
 
-    [ContextMemberMetadata<ResManager>]
+  //  [ContextMemberMetadata<ResManager>]
 
     //[ContextMemberMetadata<BlendId>]
     [ContextMemberMetadata<BsSaveDataImpl>]
@@ -44,6 +44,16 @@ namespace Maple.Game.Zaohua.Metadata
 
     //[ContextMemberMetadata<TbStateCfg>]
     [ContextMemberMetadata<TbPostCfg>]
+
+    [ContextMemberMetadata<TbArtCfg>]
+    [ContextMemberMetadata<TbArtSto>]
+    [ContextMemberMetadata<TbArtImpl>]
+
+
+
+    [ContextMemberMetadata<TbTreeCfg>]
+    [ContextMemberMetadata<TbTreeSto>]
+    [ContextMemberMetadata<TbTreeImpl>]
 
     public partial class GameMetadataContext
     {

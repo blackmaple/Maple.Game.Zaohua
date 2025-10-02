@@ -1,3 +1,5 @@
+using Maple.MonoGameAssistant.MetadataCollections;
+
 namespace Maple.Game.Zaohua.Metadata
 {
     /// <summary>
@@ -60,10 +62,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbArtSto></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_artStoList", "System.Collections.Generic.List<TbArtSto>")]
-           public partial nint _ART_STO_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbArtSto.Ptr_TbArtSto> _ART_STO_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x30 System.Collections.Generic.List<TbArtLogSto> _artLogStoList
@@ -80,10 +82,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbMagicSto></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_magicStoList", "System.Collections.Generic.List<TbMagicSto>")]
-           public partial nint _MAGIC_STO_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbMagicSto.Ptr_TbMagicSto> _MAGIC_STO_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x40 System.Collections.Generic.List<TbQuickItemSto> _quickItemStoList
@@ -150,20 +152,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbTreeSto></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_treeStoList", "System.Collections.Generic.List<TbTreeSto>")]
-           public partial nint _TREE_STO_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbTreeSto.Ptr_TbTreeSto> _TREE_STO_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x78 System.Collections.Generic.List<TbNpcSto> _npcStoList
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbNpcSto></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_npcStoList", "System.Collections.Generic.List<TbNpcSto>")]
-           public partial nint _NPC_STO_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbNpcSto.Ptr_TbNpcSto> _NPC_STO_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x80 System.Collections.Generic.List<TbNpcPlaceSto> _npcPlaceStoList
@@ -190,10 +192,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbPackSto></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("_packStoList", "System.Collections.Generic.List<TbPackSto>")]
-           public partial nint _PACK_STO_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbPackSto.Ptr_TbPackSto> _PACK_STO_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x98 System.Collections.Generic.List<TbDrugMaxSto> _drugMaxStoList

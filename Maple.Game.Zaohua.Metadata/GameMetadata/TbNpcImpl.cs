@@ -30,10 +30,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["Assembly-CSharp".""."TbNpcImpl"]
             /// </summary>
             /// <returns>class TbNpcImpl</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("m_Instance", "TbNpcImpl")]
-            public static partial nint M_INSTANCE { get; set; } 
-*/
+            public static partial Ptr_TbNpcImpl M_INSTANCE { get; set; } 
+
 
             /// <summary>
             /// 0x8 System.String m_Lock
@@ -95,12 +95,12 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "npcId">struct System.Int32</param>
             /// <param name = "artId">struct System.Int32</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("AddNpcArt", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 1)]
             public partial void ADD_NPC_ART(System.Int32 npcId, System.Int32 artId); 
-*/
+
             /// <summary>
             ///   System.Void AddNpcArtByNpcSto(TbNpcSto npcSto, System.Int32 artId)
             /// </summary>
@@ -119,12 +119,12 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "npcId">struct System.Int32</param>
             /// <param name = "magicId">struct System.Int32</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("AddNpcMagic", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 1)]
             public partial void ADD_NPC_MAGIC(System.Int32 npcId, System.Int32 magicId); 
-*/
+
             /// <summary>
             ///   System.Void AddNpcMagicByNpcSto(TbNpcSto npcSto, System.Int32 magicId)
             /// </summary>
@@ -163,12 +163,12 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "npcId">struct System.Int32</param>
             /// <param name = "artId">struct System.Int32</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("DelNpcArt", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 1)]
             public partial void DEL_NPC_ART(System.Int32 npcId, System.Int32 artId); 
-*/
+
             /// <summary>
             ///   System.Void DelNpcArtByNpcSto(TbNpcSto npcSto, System.Int32 artId)
             /// </summary>
@@ -187,12 +187,12 @@ namespace Maple.Game.Zaohua.Metadata
             /// <param name = "npcId">struct System.Int32</param>
             /// <param name = "magicId">struct System.Int32</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("DelNpcMagic", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 0)]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 1)]
             public partial void DEL_NPC_MAGIC(System.Int32 npcId, System.Int32 magicId); 
-*/
+
             /// <summary>
             ///   System.Void DelNpcMagicByNpcSto(TbNpcSto npcSto, System.Int32 magicId)
             /// </summary>

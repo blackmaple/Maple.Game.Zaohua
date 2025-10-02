@@ -458,10 +458,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbArtCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("artList", "System.Collections.Generic.List<TbArtCfg>")]
-           public partial nint ART_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbArtCfg.Ptr_TbArtCfg> ART_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x140 System.Collections.Generic.List<TbMagicCfg> magicList
@@ -649,8 +649,8 @@ namespace Maple.Game.Zaohua.Metadata
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbEquipEffectCfg></returns>
 
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipEffectCfgList", "System.Collections.Generic.List<TbEquipEffectCfg>")]
-            public partial SysPtrList<TbEquipEffectCfg.Ptr_TbEquipEffectCfg> EQUIP_EFFECT_CFG_LIST { get; set; }
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("equipEffectCfgList", "System.Collections.Generic.List<TbEquipEffectCfg>")]
+            //public partial SysPtrList<TbEquipEffectCfg.Ptr_TbEquipEffectCfg> EQUIP_EFFECT_CFG_LIST { get; set; }
 
 
             /// <summary>
@@ -658,10 +658,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// class ["mscorlib"."System.Collections.Generic"."List`1"]
             /// </summary>
             /// <returns>class System.Collections.Generic.List<TbTreeCfg></returns>
-            /*
+            
            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("treeCfgList", "System.Collections.Generic.List<TbTreeCfg>")]
-           public partial nint TREE_CFG_LIST { get; set; } 
-*/
+           public partial SysPtrList<TbTreeCfg.Ptr_TbTreeCfg> TREE_CFG_LIST { get; set; } 
+
 
             /// <summary>
             /// 0x1E0 System.Collections.Generic.List<TbCreateCfg> createCfgList
