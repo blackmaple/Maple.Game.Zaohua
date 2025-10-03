@@ -153,10 +153,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Single"]
             /// </summary>
             /// <returns>struct System.Single</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("armorSave", "System.Single")]
-            public partial System.Single ARMOR_SAVE { get; set; } 
-*/
+             
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("armorSave", "System.Single")]
+            //public partial System.Single ARMOR_SAVE { get; set; } 
+
 
             /// <summary>
             /// 0x64 System.Int32 flag
@@ -173,10 +173,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int64"]
             /// </summary>
             /// <returns>struct System.Int64</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("money", "System.Int64")]
             public partial System.Int64 MONEY { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x70 System.Int32 species
@@ -193,10 +193,10 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribId", "System.Int32")]
-            public partial System.Int32 ATTRIB_ID { get; set; } 
-*/
+             
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("attribId", "System.Int32")]
+            //public partial System.Int32 ATTRIB_ID { get; set; } 
+
 
             /// <summary>
             /// 0x78 System.Int32 clothesType
@@ -223,20 +223,20 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("lvId", "System.Int32")]
             public partial System.Int32 LV_ID { get; set; } 
-*/
 
-            /// <summary>
+
+            /// <summary> 
             /// 0x84 System.Int32 exp
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("exp", "System.Int32")]
-            public partial System.Int32 EXP { get; set; } 
-*/
+             
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("exp", "System.Int32")]
+            //public partial System.Int32 EXP { get; set; } 
+
 
             /// <summary>
             /// 0x88 System.Int32 helmet
@@ -423,180 +423,180 @@ namespace Maple.Game.Zaohua.Metadata
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("capacity", "System.Int32")]
-            public partial System.Int32 CAPACITY { get; set; } 
-*/
+             
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("capacity", "System.Int32")]
+            //public partial System.Int32 CAPACITY { get; set; } 
+
 
             /// <summary>
             /// 0xD4 System.Int32 hp
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("hp", "System.Int32")]
             public partial System.Int32 HP { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xD8 System.Int32 mp
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mp", "System.Int32")]
             public partial System.Int32 MP { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xDC System.Int32 action
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("action", "System.Int32")]
             public partial System.Int32 ACTION { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xE0 System.Int32 sorAtt
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("sorAtt", "System.Int32")]
             public partial System.Int32 SOR_ATT { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xE4 System.Int32 sorDef
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("sorDef", "System.Int32")]
             public partial System.Int32 SOR_DEF { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xE8 System.Int32 phyAtt
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("phyAtt", "System.Int32")]
             public partial System.Int32 PHY_ATT { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xEC System.Int32 phyDef
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("phyDef", "System.Int32")]
             public partial System.Int32 PHY_DEF { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xF0 System.Int32 armor
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("armor", "System.Int32")]
             public partial System.Int32 ARMOR { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xF4 System.Int32 advance
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("advance", "System.Int32")]
             public partial System.Int32 ADVANCE { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xF8 System.Single fly
             /// struct ["mscorlib"."System"."Single"]
             /// </summary>
             /// <returns>struct System.Single</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("fly", "System.Single")]
             public partial System.Single FLY { get; set; } 
-*/
+
 
             /// <summary>
             /// 0xFC System.Int32 wide
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("wide", "System.Int32")]
             public partial System.Int32 WIDE { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x100 System.Int32 high
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("high", "System.Int32")]
             public partial System.Int32 HIGH { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x104 System.Int32 sectId
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("sectId", "System.Int32")]
             public partial System.Int32 SECT_ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x108 System.Int32 postId
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("postId", "System.Int32")]
             public partial System.Int32 POST_ID { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x10C System.Int32 mind
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("mind", "System.Int32")]
             public partial System.Int32 MIND { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x110 System.Int32 shield
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("shield", "System.Int32")]
             public partial System.Int32 SHIELD { get; set; } 
-*/
+
 
             /// <summary>
             /// 0x114 System.Int32 ployId
             /// struct ["mscorlib"."System"."Int32"]
             /// </summary>
             /// <returns>struct System.Int32</returns>
-             /*
-            [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ployId", "System.Int32")]
-            public partial System.Int32 PLOY_ID { get; set; } 
-*/
+             
+            //[Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassPropertyMetadataAttribute("ployId", "System.Int32")]
+            //public partial System.Int32 PLOY_ID { get; set; } 
+
         }
 
         /// <summary>

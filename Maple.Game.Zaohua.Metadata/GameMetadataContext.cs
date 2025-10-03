@@ -44,7 +44,8 @@ namespace Maple.Game.Zaohua.Metadata
 
     //[ContextMemberMetadata<TbStateCfg>]
     [ContextMemberMetadata<TbPostCfg>]
-
+    //[ContextMemberMetadata<TbPloyCfg>]
+    
     [ContextMemberMetadata<TbArtCfg>]
     [ContextMemberMetadata<TbArtSto>]
     [ContextMemberMetadata<TbArtImpl>]

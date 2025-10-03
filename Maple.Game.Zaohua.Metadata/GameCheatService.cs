@@ -16,6 +16,7 @@ namespace Maple.Game.Zaohua.Metadata
 
         public TbActor.Ptr_TbActor Ptr_TbActor { get; } = ptr_TbActor;
         public BsBagImpl.Ptr_BsBagImpl Ptr_BsBagImpl { get; } = BsBagImpl.Ptr_BsBagImpl.M_INSTANCE;
+        private TbPlayerSto.Ptr_TbPlayerSto Ptr_PlayerSto { get; } = ptr_TbActor._PLAYER_STO;
         private int PlayerId { get; } = ptr_TbActor._PLAYER_STO.ID;
 
         public static GameCheatService CreateGameCheatService(GameResourceCache c)
@@ -35,6 +36,8 @@ namespace Maple.Game.Zaohua.Metadata
             var characterId = this.PlayerId;
             if (this.TryFindNpcSto(characterId, out var npc))
             {
+                this.Logger.LogInformation("{player}:{npc}", this.Ptr_PlayerSto.Ptr.ToString("X8"), npc.Ptr.ToString("X8"));
+
                 yield return new GameCharacterDisplayDTO
                 {
                     ObjectId = npc.ID.ToString(),
@@ -164,8 +167,6 @@ namespace Maple.Game.Zaohua.Metadata
 
             return false;
         }
-
-
         private IEnumerable<TbTreeSto.Ptr_TbTreeSto> EnumTreeStos(int npcId)
         {
             foreach (var m in this.Ptr_TbActor._TREE_STO_LIST.AsEnumerable())
@@ -176,14 +177,14 @@ namespace Maple.Game.Zaohua.Metadata
         private IEnumerable<GameSwitchDisplayDTO> EnumCharacterTree(int npcId)
         {
             var treeStos = this.EnumTreeStos(npcId).ToArray();
-            foreach (var tree in this.Cache.GameObjects.Where(p=>p.DisplayCategory == nameof(TbTreeCfg)))
+            foreach (var tree in this.Cache.GameObjects.Where(p => p.DisplayCategory == nameof(TbTreeCfg)))
             {
-                var ptrTreeCfg = new TbTreeCfg .Ptr_TbTreeCfg (tree.ObjectPointer);
+                var ptrTreeCfg = new TbTreeCfg.Ptr_TbTreeCfg(tree.ObjectPointer);
                 var sto = treeStos.FirstOrDefault(p => p.TREE_ID == ptrTreeCfg.ID);
                 yield return new GameSwitchDisplayDTO()
                 {
                     ObjectId = tree.ObjectId,
-                    DisplayName = tree.DisplayName,
+                    DisplayName = $"至宝*{tree.DisplayName}",
                     DisplayCategory = tree.DisplayCategory,
                     DisplayDesc = tree.DisplayDesc,
                     DisplayImage = tree.DisplayImage,
@@ -195,6 +196,105 @@ namespace Maple.Game.Zaohua.Metadata
             }
 
         }
+        private IEnumerable<GameSwitchDisplayDTO> EnumCharacterProp(int npcId)
+        {
+            #region PlayerSto
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.HP_NOW), "属性*当前气血", "当前气血", this.Ptr_PlayerSto.HP_NOW.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MP_NOW), "属性*当前法术", "当前法术", this.Ptr_PlayerSto.MP_NOW.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.GOLD), "灵根*金", "灵根*金", this.Ptr_PlayerSto.GOLD.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WOOD), "灵根*木", "灵根*木", this.Ptr_PlayerSto.WOOD.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WATER), "灵根*水", "灵根*水", this.Ptr_PlayerSto.WATER.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FIRE), "灵根*火", "灵根*火", this.Ptr_PlayerSto.FIRE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SOIL), "灵根*土", "灵根*土", this.Ptr_PlayerSto.SOIL.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ICE), "灵根*冰", "灵根*冰", this.Ptr_PlayerSto.ICE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WIND), "灵根*风", "灵根*风", this.Ptr_PlayerSto.WIND.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.THUNDER), "灵根*雷", "灵根*雷", this.Ptr_PlayerSto.THUNDER.ToString());
+
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.AGE), "属性*骨龄", "当前的岁数", this.Ptr_PlayerSto.AGE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.YEAR), "属性*寿命", "存活的最大岁数", this.Ptr_PlayerSto.YEAR.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.JUSTICE), "属性*正邪", "正邪", this.Ptr_PlayerSto.JUSTICE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FATE), "属性*气运", "气运", this.Ptr_PlayerSto.FATE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXP), "属性*经验", "经验", this.Ptr_PlayerSto.EXP.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BRAVE), "隐藏*勇气", "勇气", this.Ptr_PlayerSto.BRAVE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXCHANGE), "隐藏*交谈", "交谈", this.Ptr_PlayerSto.EXCHANGE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.CREDIT), "隐藏*信用", "信用", this.Ptr_PlayerSto.CREDIT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BATTLE_SPEED), "隐藏*战斗速度", "战斗速度", this.Ptr_PlayerSto.BATTLE_SPEED.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FLY), "隐藏*飞行", "飞行", this.Ptr_PlayerSto.FLY.ToString());
+
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SPACE_COUNT), "数量*背包", "背包数量", this.Ptr_PlayerSto.SPACE_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAGIC_COUNT), "数量*术法", "术法数量", this.Ptr_PlayerSto.MAGIC_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.TREAS_COUNT), "数量*法宝", "法宝数量", this.Ptr_PlayerSto.TREAS_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.DANTIAN_COUNT), "数量*扩容", "扩容数量", this.Ptr_PlayerSto.DANTIAN_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ART_COUNT), "数量*功法", "功法数量", this.Ptr_PlayerSto.ART_COUNT.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAX_FLIP_SCORE), "数量*游戏", "游戏分数", this.Ptr_PlayerSto.MAX_FLIP_SCORE.ToString());
+            #endregion
+
+            #region NpcSto
+            if (!TryFindNpcSto(npcId, out var ptr_TbNpcSto))
+            {
+                yield break;
+            }
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HP), "属性*最大气血", "最大气血", ptr_TbNpcSto.HP.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MP), "属性*精力", "最大精力", ptr_TbNpcSto.MP.ToString());
+
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_ATT), "属性*术攻", "影响术法攻击的威力", ptr_TbNpcSto.SOR_ATT.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_DEF), "属性*术防", "影响术法防御的威力", ptr_TbNpcSto.SOR_DEF.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_ATT), "属性*物攻", "影响物理攻击的威力", ptr_TbNpcSto.PHY_ATT.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_DEF), "属性*物防", "影响物理防御的威力", ptr_TbNpcSto.PHY_DEF.ToString());
+
+
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR_SAVE), "ARMOR_SAVE", "ARMOR_SAVE", ptr_TbNpcSto.ARMOR_SAVE.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ACTION), "属性*精力", "战斗中每回合增加精力值", ptr_TbNpcSto.ACTION.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR), "属性*护甲", "每回合固定产生护盾,用以格挡伤害值", ptr_TbNpcSto.ARMOR.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.CAPACITY), "状态*背包?", "CAPACITY", ptr_TbNpcSto.CAPACITY.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ADVANCE), "属性*速度", "影响行动的先后顺序", ptr_TbNpcSto.ADVANCE.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.WIDE), "WIDE", "WIDE", ptr_TbNpcSto.WIDE.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HIGH), "HIGH", "HIGH", ptr_TbNpcSto.HIGH.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MIND), "属性*神魂", "允许存储最大的精力值", ptr_TbNpcSto.MIND.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SHIELD), "属性*护罩", "只在战斗初产生护盾,防止被秒杀", ptr_TbNpcSto.SHIELD.ToString());
+
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.SECT_ID), "属性*宗门", "宗门", ptr_TbNpcSto.SECT_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbSectCfg)) ?? []);
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.POST_ID), "属性*身份", "身份", ptr_TbNpcSto.POST_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbPostCfg)) ?? []);
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PLOY_ID), "PLOY_ID", "PLOY_ID", ptr_TbNpcSto.PLOY_ID.ToString());
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.LV_ID), "属性*等级", "属性*等级", ptr_TbNpcSto.LV_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbLvCfg)) ?? []);
+            //yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.ATTRIB_ID), "ATTRIB_ID", "ATTRIB_ID", ptr_TbNpcSto.ATTRIB_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbAttribCfg)) ?? []);
+
+
+            #endregion
+
+        }
+
+        private static GameSwitchDisplayDTO CreatePlayerSto(string key, string name, string desc, string val)
+        {
+            return new GameSwitchDisplayDTO() { ObjectId = key, DisplayCategory = nameof(TbPlayerSto), DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
+        }
+
+        private static GameSwitchDisplayDTO CreateNpcSto(string key, string name, string desc, string val)
+        {
+            return new GameSwitchDisplayDTO() { ObjectId = key, DisplayCategory = nameof(TbNpcSto), DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
+        }
+        private static GameSwitchDisplayDTO CreateNpcSto_SelectedContents(string key, string name, string desc, string val, GameValueInfoDTO[] selectedContents)
+        {
+            return new GameSwitchDisplayDTO()
+            {
+                ObjectId = key,
+                DisplayCategory = nameof(TbNpcSto),
+                DisplayName = name,
+                DisplayDesc = desc,
+                ContentValue = val,
+                UIType = (int)EnumGameSwitchUIType.Selects,
+                SelectedContents = [.. selectedContents]
+
+            };
+        }
+
         public GameCharacterStatusDTO GetGameCharacterStatus(GameCharacterObjectDTO characterObjectDTO)
         {
             if (characterObjectDTO.CharacterId != this.PlayerId.ToString())
@@ -206,7 +306,7 @@ namespace Maple.Game.Zaohua.Metadata
             return new GameCharacterStatusDTO()
             {
                 ObjectId = characterObjectDTO.CharacterId,
-                CharacterAttributes = [.. EnumCharacterTree(this.PlayerId)]
+                CharacterAttributes = [.. EnumCharacterProp(this.PlayerId), .. EnumCharacterTree(this.PlayerId)]
             };
 
 
