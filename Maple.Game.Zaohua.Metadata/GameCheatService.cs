@@ -10,6 +10,9 @@ namespace Maple.Game.Zaohua.Metadata
 {
     public partial class GameCheatService(GameResourceCache cache, TbActor.Ptr_TbActor ptr_TbActor)
     {
+
+        #region Prop
+
         public GameResourceCache Cache { get; } = cache;
         public GameMetadataContext Context => Cache.Context;
         private ILogger Logger => Context.Logger;
@@ -18,6 +21,7 @@ namespace Maple.Game.Zaohua.Metadata
         public BsBagImpl.Ptr_BsBagImpl Ptr_BsBagImpl { get; } = BsBagImpl.Ptr_BsBagImpl.M_INSTANCE;
         private TbPlayerSto.Ptr_TbPlayerSto Ptr_PlayerSto { get; } = ptr_TbActor._PLAYER_STO;
         private int PlayerId { get; } = ptr_TbActor._PLAYER_STO.ID;
+        #endregion
 
         public static GameCheatService CreateGameCheatService(GameResourceCache c)
         {
@@ -61,6 +65,262 @@ namespace Maple.Game.Zaohua.Metadata
             }
             return false;
         }
+
+
+
+
+        #region Status
+
+        #region TreeSto
+
+        private IEnumerable<TbTreeSto.Ptr_TbTreeSto> EnumTreeStos(int npcId)
+        {
+            foreach (var m in this.Ptr_TbActor._TREE_STO_LIST.AsEnumerable())
+            {
+                yield return m;
+            }
+        }
+        private IEnumerable<GameSwitchDisplayDTO> EnumCharacterTree(int npcId)
+        {
+            var treeStos = this.EnumTreeStos(npcId).ToArray();
+            foreach (var tree in this.Cache.GameObjects.Where(p => p.DisplayCategory == nameof(TbTreeCfg)))
+            {
+                var ptrTreeCfg = new TbTreeCfg.Ptr_TbTreeCfg(tree.ObjectPointer);
+                var sto = treeStos.FirstOrDefault(p => p.TREE_ID == ptrTreeCfg.ID);
+                yield return new GameSwitchDisplayDTO()
+                {
+                    ObjectId = $"{nameof(TbTreeSto)}_{tree.ObjectId}",
+                    DisplayName = $"至宝*{tree.DisplayName}",
+                    DisplayDesc = tree.DisplayDesc,
+                    DisplayImage = tree.DisplayImage,
+                    UIType = (int)EnumGameSwitchUIType.Switches,
+                    CanWrite = true,
+                    SwitchValue = sto.IsNotNull() && sto.IS_STUDY
+                };
+
+            }
+
+        }
+
+        #endregion
+
+        private IEnumerable<GameSwitchDisplayDTO> EnumCharacterStatus(int npcId)
+        {
+            #region PlayerSto
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.HP_NOW), "属性*当前气血", "当前气血", this.Ptr_PlayerSto.HP_NOW.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MP_NOW), "属性*当前法术", "当前法术", this.Ptr_PlayerSto.MP_NOW.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.GOLD), "灵根*金", "灵根*金", this.Ptr_PlayerSto.GOLD.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WOOD), "灵根*木", "灵根*木", this.Ptr_PlayerSto.WOOD.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WATER), "灵根*水", "灵根*水", this.Ptr_PlayerSto.WATER.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FIRE), "灵根*火", "灵根*火", this.Ptr_PlayerSto.FIRE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SOIL), "灵根*土", "灵根*土", this.Ptr_PlayerSto.SOIL.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ICE), "灵根*冰", "灵根*冰", this.Ptr_PlayerSto.ICE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WIND), "灵根*风", "灵根*风", this.Ptr_PlayerSto.WIND.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.THUNDER), "灵根*雷", "灵根*雷", this.Ptr_PlayerSto.THUNDER.ToString());
+
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.AGE), "属性*骨龄", "当前的岁数", this.Ptr_PlayerSto.AGE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.YEAR), "属性*寿命", "存活的最大岁数", this.Ptr_PlayerSto.YEAR.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.JUSTICE), "属性*正邪", "正邪", this.Ptr_PlayerSto.JUSTICE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FATE), "属性*气运", "气运", this.Ptr_PlayerSto.FATE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXP), "属性*经验", "经验", this.Ptr_PlayerSto.EXP.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BRAVE), "隐藏*勇气", "勇气", this.Ptr_PlayerSto.BRAVE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXCHANGE), "隐藏*交谈", "交谈", this.Ptr_PlayerSto.EXCHANGE.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.CREDIT), "隐藏*信用", "信用", this.Ptr_PlayerSto.CREDIT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BATTLE_SPEED), "隐藏*战斗速度", "战斗速度", this.Ptr_PlayerSto.BATTLE_SPEED.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FLY), "隐藏*飞行", "飞行", this.Ptr_PlayerSto.FLY.ToString());
+
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SPACE_COUNT), "数量*背包", "背包数量", this.Ptr_PlayerSto.SPACE_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAGIC_COUNT), "数量*术法", "术法数量", this.Ptr_PlayerSto.MAGIC_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.TREAS_COUNT), "数量*法宝", "法宝数量", this.Ptr_PlayerSto.TREAS_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.DANTIAN_COUNT), "数量*扩容", "扩容数量", this.Ptr_PlayerSto.DANTIAN_COUNT.ToString());
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ART_COUNT), "数量*功法", "功法数量", this.Ptr_PlayerSto.ART_COUNT.ToString());
+
+            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAX_FLIP_SCORE), "数量*游戏", "游戏分数", this.Ptr_PlayerSto.MAX_FLIP_SCORE.ToString());
+            #endregion
+
+            #region NpcSto
+            if (!TryFindNpcSto(npcId, out var ptr_TbNpcSto))
+            {
+                yield break;
+            }
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HP), "属性*最大气血", "最大气血", ptr_TbNpcSto.HP.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MP), "属性*最大术", "最大法术", ptr_TbNpcSto.MP.ToString());
+
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_ATT), "属性*术攻", "影响术法攻击的威力", ptr_TbNpcSto.SOR_ATT.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_DEF), "属性*术防", "影响术法防御的威力", ptr_TbNpcSto.SOR_DEF.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_ATT), "属性*物攻", "影响物理攻击的威力", ptr_TbNpcSto.PHY_ATT.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_DEF), "属性*物防", "影响物理防御的威力", ptr_TbNpcSto.PHY_DEF.ToString());
+
+
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR_SAVE), "ARMOR_SAVE", "ARMOR_SAVE", ptr_TbNpcSto.ARMOR_SAVE.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ACTION), "属性*精力", "战斗中每回合增加精力值", ptr_TbNpcSto.ACTION.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR), "属性*护甲", "每回合固定产生护盾,用以格挡伤害值", ptr_TbNpcSto.ARMOR.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.CAPACITY), "状态*背包?", "CAPACITY", ptr_TbNpcSto.CAPACITY.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ADVANCE), "属性*速度", "影响行动的先后顺序", ptr_TbNpcSto.ADVANCE.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.WIDE), "WIDE", "WIDE", ptr_TbNpcSto.WIDE.ToString());
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HIGH), "HIGH", "HIGH", ptr_TbNpcSto.HIGH.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MIND), "属性*神魂", "允许存储最大的精力值", ptr_TbNpcSto.MIND.ToString());
+            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SHIELD), "属性*护罩", "只在战斗初产生护盾,防止被秒杀", ptr_TbNpcSto.SHIELD.ToString());
+
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.SECT_ID), "属性*宗门", "宗门", ptr_TbNpcSto.SECT_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbSectCfg)) ?? []);
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.POST_ID), "属性*身份", "身份", ptr_TbNpcSto.POST_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbPostCfg)) ?? []);
+            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PLOY_ID), "PLOY_ID", "PLOY_ID", ptr_TbNpcSto.PLOY_ID.ToString());
+            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.LV_ID), "属性*等级", "属性*等级", ptr_TbNpcSto.LV_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbLvCfg)) ?? []);
+            //yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.ATTRIB_ID), "ATTRIB_ID", "ATTRIB_ID", ptr_TbNpcSto.ATTRIB_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbAttribCfg)) ?? []);
+
+
+            #endregion
+
+        }
+        private static GameSwitchDisplayDTO CreatePlayerSto(string key, string name, string desc, string val)
+        {
+            return new GameSwitchDisplayDTO() { ObjectId = $"{nameof(TbPlayerSto)}_{key}", DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
+        }
+        private static GameSwitchDisplayDTO CreateNpcSto(string key, string name, string desc, string val)
+        {
+            return new GameSwitchDisplayDTO() { ObjectId = $"{nameof(TbNpcSto)}_{key}", DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
+        }
+        private static GameSwitchDisplayDTO CreateNpcSto_SelectedContents(string key, string name, string desc, string val, GameValueInfoDTO[] selectedContents)
+        {
+            return new GameSwitchDisplayDTO()
+            {
+                ObjectId = $"{nameof(TbNpcSto)}_{key}",
+                DisplayName = name,
+                DisplayDesc = desc,
+                ContentValue = val,
+                UIType = (int)EnumGameSwitchUIType.Selects,
+                SelectedContents = [.. selectedContents]
+
+            };
+        }
+
+        public GameCharacterStatusDTO GetGameCharacterStatus(GameCharacterObjectDTO characterObjectDTO)
+        {
+            if (characterObjectDTO.CharacterId != this.PlayerId.ToString())
+            {
+                return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterObjectDTO.CharacterId}");
+            }
+
+
+            return new GameCharacterStatusDTO()
+            {
+                ObjectId = characterObjectDTO.CharacterId,
+                CharacterAttributes = [.. EnumCharacterStatus(this.PlayerId), .. EnumCharacterTree(this.PlayerId)]
+            };
+
+
+        }
+
+        public GameCharacterStatusDTO UpdateGameCharacterStatus(GameCharacterModifyDTO characterModifyDTO)
+        {
+            if (characterModifyDTO.CharacterId != this.PlayerId.ToString())
+            {
+                return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterModifyDTO.CharacterId}");
+            }
+            if (characterModifyDTO.ModifyObject?.StartsWith(nameof(TbPlayerSto)) == true)
+            {
+                var ptrPlayerSto = this.Ptr_PlayerSto;
+                if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.HP_NOW)) == true) { ptrPlayerSto.HP_NOW = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.MP_NOW)) == true) { ptrPlayerSto.MP_NOW = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.GOLD)) == true) { ptrPlayerSto.GOLD = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.WOOD)) == true) { ptrPlayerSto.WOOD = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.WATER)) == true) { ptrPlayerSto.WATER = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.FIRE)) == true) { ptrPlayerSto.FIRE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.SOIL)) == true) { ptrPlayerSto.SOIL = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.ICE)) == true) { ptrPlayerSto.ICE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.WIND)) == true) { ptrPlayerSto.WIND = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.THUNDER)) == true) { ptrPlayerSto.THUNDER = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.AGE)) == true) { ptrPlayerSto.AGE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.YEAR)) == true) { ptrPlayerSto.YEAR = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.JUSTICE)) == true) { ptrPlayerSto.JUSTICE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.FATE)) == true) { ptrPlayerSto.FATE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXP)) == true) { ptrPlayerSto.EXP = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.BRAVE)) == true) { ptrPlayerSto.BRAVE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXCHANGE)) == true) { ptrPlayerSto.EXCHANGE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.CREDIT)) == true) { ptrPlayerSto.CREDIT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.BATTLE_SPEED)) == true) { ptrPlayerSto.BATTLE_SPEED = characterModifyDTO.FloatValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.FLY)) == true) { ptrPlayerSto.FLY = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.SPACE_COUNT)) == true) { ptrPlayerSto.SPACE_COUNT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAGIC_COUNT)) == true) { ptrPlayerSto.MAGIC_COUNT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.TREAS_COUNT)) == true) { ptrPlayerSto.TREAS_COUNT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.DANTIAN_COUNT)) == true) { ptrPlayerSto.DANTIAN_COUNT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.ART_COUNT)) == true) { ptrPlayerSto.ART_COUNT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAX_FLIP_SCORE)) == true) { ptrPlayerSto.MAX_FLIP_SCORE = characterModifyDTO.IntValue; }
+                else
+                {
+                    return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterModifyDTO.ModifyCategory}:{characterModifyDTO.ModifyObject}");
+
+                }
+
+
+            }
+            else if (characterModifyDTO.ModifyObject?.StartsWith(nameof(TbNpcSto)) == true
+                && TryFindNpcSto(this.PlayerId, out var ptr_TbNpcSto))
+            {
+                if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.HP)) == true) { ptr_TbNpcSto.HP = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.MP)) == true) { ptr_TbNpcSto.MP = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_ATT)) == true) { ptr_TbNpcSto.SOR_ATT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_DEF)) == true) { ptr_TbNpcSto.SOR_DEF = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_ATT)) == true) { ptr_TbNpcSto.PHY_ATT = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_DEF)) == true) { ptr_TbNpcSto.PHY_DEF = characterModifyDTO.IntValue; }
+                //      else if (characterModifyDTO.ModifyObject .EndsWith( nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR_SAVE))==true) { ptr_TbNpcSto.ARMOR_SAVE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.ACTION)) == true) { ptr_TbNpcSto.ACTION = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR)) == true) { ptr_TbNpcSto.ARMOR = characterModifyDTO.IntValue; }
+                //     else if (characterModifyDTO.ModifyObject .EndsWith( nameof(TbNpcSto.Ptr_TbNpcSto.CAPACITY)) ==true){ ptr_TbNpcSto.CAPACITY = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.ADVANCE)) == true) { ptr_TbNpcSto.ADVANCE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.WIDE)) == true) { ptr_TbNpcSto.WIDE = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.HIGH)) == true) { ptr_TbNpcSto.HIGH = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.MIND)) == true) { ptr_TbNpcSto.MIND = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.SHIELD)) == true) { ptr_TbNpcSto.SHIELD = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.SECT_ID)) == true) { ptr_TbNpcSto.SECT_ID = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.POST_ID)) == true) { ptr_TbNpcSto.POST_ID = characterModifyDTO.IntValue; }
+                //      else if (characterModifyDTO.ModifyObject .EndsWith( nameof(TbNpcSto.Ptr_TbNpcSto.PLOY_ID)) ==true){ ptr_TbNpcSto.PLOY_ID = characterModifyDTO.IntValue; }
+                else if (characterModifyDTO.ModifyObject.EndsWith(nameof(TbNpcSto.Ptr_TbNpcSto.LV_ID)) == true) { ptr_TbNpcSto.LV_ID = characterModifyDTO.IntValue; }
+                //     else if (characterModifyDTO.ModifyObject .EndsWith( nameof(TbNpcSto.Ptr_TbNpcSto.ATTRIB_ID)) { ptr_TbNpcSto.ATTRIB_ID = characterModifyDTO.IntValue; }
+                else
+                {
+                    return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterModifyDTO.ModifyCategory}:{characterModifyDTO.ModifyObject}");
+
+                }
+            }
+            else if (characterModifyDTO.ModifyObject?.StartsWith(nameof(TbTreeSto)) == true)
+            {
+                if (int.TryParse(characterModifyDTO.ModifyObject.AsSpan(nameof(TbTreeSto).Length + 1), out var id))
+                {
+                    foreach (var tree in this.EnumTreeStos(this.PlayerId).Where(p => p.TREE_ID == id))
+                    {
+                        tree.IS_STUDY = characterModifyDTO.BoolValue ?? false;
+                    }
+                }
+                else
+                {
+                    return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterModifyDTO.ModifyCategory}:{characterModifyDTO.ModifyObject}");
+
+                }
+            }
+            else
+            {
+                return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterModifyDTO.ModifyCategory}:{characterModifyDTO.ModifyObject}");
+            }
+
+            return new GameCharacterStatusDTO()
+            {
+                ObjectId = characterModifyDTO.CharacterId,
+                CharacterAttributes = [.. EnumCharacterStatus(this.PlayerId), .. EnumCharacterTree(this.PlayerId)]
+            };
+        }
+
+        #endregion
+
+        #region Skill
+
+        #region MagicSto
 
         private IEnumerable<TbMagicSto.Ptr_TbMagicSto> EnumMagicStos(int npcId)
         {
@@ -114,6 +374,9 @@ namespace Maple.Game.Zaohua.Metadata
 
             return false;
         }
+        #endregion
+
+        #region ArtSto
 
         private IEnumerable<TbArtSto.Ptr_TbArtSto> EnumArtStos(int npcId)
         {
@@ -167,150 +430,8 @@ namespace Maple.Game.Zaohua.Metadata
 
             return false;
         }
-        private IEnumerable<TbTreeSto.Ptr_TbTreeSto> EnumTreeStos(int npcId)
-        {
-            foreach (var m in this.Ptr_TbActor._TREE_STO_LIST.AsEnumerable())
-            {
-                yield return m;
-            }
-        }
-        private IEnumerable<GameSwitchDisplayDTO> EnumCharacterTree(int npcId)
-        {
-            var treeStos = this.EnumTreeStos(npcId).ToArray();
-            foreach (var tree in this.Cache.GameObjects.Where(p => p.DisplayCategory == nameof(TbTreeCfg)))
-            {
-                var ptrTreeCfg = new TbTreeCfg.Ptr_TbTreeCfg(tree.ObjectPointer);
-                var sto = treeStos.FirstOrDefault(p => p.TREE_ID == ptrTreeCfg.ID);
-                yield return new GameSwitchDisplayDTO()
-                {
-                    ObjectId = tree.ObjectId,
-                    DisplayName = $"至宝*{tree.DisplayName}",
-                    DisplayCategory = tree.DisplayCategory,
-                    DisplayDesc = tree.DisplayDesc,
-                    DisplayImage = tree.DisplayImage,
-                    UIType = (int)EnumGameSwitchUIType.Switches,
-                    CanWrite = true,
-                    SwitchValue = sto.IsNotNull() && sto.IS_STUDY
-                };
 
-            }
-
-        }
-        private IEnumerable<GameSwitchDisplayDTO> EnumCharacterProp(int npcId)
-        {
-            #region PlayerSto
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.HP_NOW), "属性*当前气血", "当前气血", this.Ptr_PlayerSto.HP_NOW.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MP_NOW), "属性*当前法术", "当前法术", this.Ptr_PlayerSto.MP_NOW.ToString());
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.GOLD), "灵根*金", "灵根*金", this.Ptr_PlayerSto.GOLD.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WOOD), "灵根*木", "灵根*木", this.Ptr_PlayerSto.WOOD.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WATER), "灵根*水", "灵根*水", this.Ptr_PlayerSto.WATER.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FIRE), "灵根*火", "灵根*火", this.Ptr_PlayerSto.FIRE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SOIL), "灵根*土", "灵根*土", this.Ptr_PlayerSto.SOIL.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ICE), "灵根*冰", "灵根*冰", this.Ptr_PlayerSto.ICE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.WIND), "灵根*风", "灵根*风", this.Ptr_PlayerSto.WIND.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.THUNDER), "灵根*雷", "灵根*雷", this.Ptr_PlayerSto.THUNDER.ToString());
-
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.AGE), "属性*骨龄", "当前的岁数", this.Ptr_PlayerSto.AGE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.YEAR), "属性*寿命", "存活的最大岁数", this.Ptr_PlayerSto.YEAR.ToString());
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.JUSTICE), "属性*正邪", "正邪", this.Ptr_PlayerSto.JUSTICE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FATE), "属性*气运", "气运", this.Ptr_PlayerSto.FATE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXP), "属性*经验", "经验", this.Ptr_PlayerSto.EXP.ToString());
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BRAVE), "隐藏*勇气", "勇气", this.Ptr_PlayerSto.BRAVE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.EXCHANGE), "隐藏*交谈", "交谈", this.Ptr_PlayerSto.EXCHANGE.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.CREDIT), "隐藏*信用", "信用", this.Ptr_PlayerSto.CREDIT.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.BATTLE_SPEED), "隐藏*战斗速度", "战斗速度", this.Ptr_PlayerSto.BATTLE_SPEED.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.FLY), "隐藏*飞行", "飞行", this.Ptr_PlayerSto.FLY.ToString());
-
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.SPACE_COUNT), "数量*背包", "背包数量", this.Ptr_PlayerSto.SPACE_COUNT.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAGIC_COUNT), "数量*术法", "术法数量", this.Ptr_PlayerSto.MAGIC_COUNT.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.TREAS_COUNT), "数量*法宝", "法宝数量", this.Ptr_PlayerSto.TREAS_COUNT.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.DANTIAN_COUNT), "数量*扩容", "扩容数量", this.Ptr_PlayerSto.DANTIAN_COUNT.ToString());
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.ART_COUNT), "数量*功法", "功法数量", this.Ptr_PlayerSto.ART_COUNT.ToString());
-
-            yield return CreatePlayerSto(nameof(TbPlayerSto.Ptr_TbPlayerSto.MAX_FLIP_SCORE), "数量*游戏", "游戏分数", this.Ptr_PlayerSto.MAX_FLIP_SCORE.ToString());
-            #endregion
-
-            #region NpcSto
-            if (!TryFindNpcSto(npcId, out var ptr_TbNpcSto))
-            {
-                yield break;
-            }
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HP), "属性*最大气血", "最大气血", ptr_TbNpcSto.HP.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MP), "属性*精力", "最大精力", ptr_TbNpcSto.MP.ToString());
-
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_ATT), "属性*术攻", "影响术法攻击的威力", ptr_TbNpcSto.SOR_ATT.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SOR_DEF), "属性*术防", "影响术法防御的威力", ptr_TbNpcSto.SOR_DEF.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_ATT), "属性*物攻", "影响物理攻击的威力", ptr_TbNpcSto.PHY_ATT.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PHY_DEF), "属性*物防", "影响物理防御的威力", ptr_TbNpcSto.PHY_DEF.ToString());
-
-
-            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR_SAVE), "ARMOR_SAVE", "ARMOR_SAVE", ptr_TbNpcSto.ARMOR_SAVE.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ACTION), "属性*精力", "战斗中每回合增加精力值", ptr_TbNpcSto.ACTION.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ARMOR), "属性*护甲", "每回合固定产生护盾,用以格挡伤害值", ptr_TbNpcSto.ARMOR.ToString());
-            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.CAPACITY), "状态*背包?", "CAPACITY", ptr_TbNpcSto.CAPACITY.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.ADVANCE), "属性*速度", "影响行动的先后顺序", ptr_TbNpcSto.ADVANCE.ToString());
-            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.WIDE), "WIDE", "WIDE", ptr_TbNpcSto.WIDE.ToString());
-            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.HIGH), "HIGH", "HIGH", ptr_TbNpcSto.HIGH.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.MIND), "属性*神魂", "允许存储最大的精力值", ptr_TbNpcSto.MIND.ToString());
-            yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.SHIELD), "属性*护罩", "只在战斗初产生护盾,防止被秒杀", ptr_TbNpcSto.SHIELD.ToString());
-
-            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.SECT_ID), "属性*宗门", "宗门", ptr_TbNpcSto.SECT_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbSectCfg)) ?? []);
-            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.POST_ID), "属性*身份", "身份", ptr_TbNpcSto.POST_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbPostCfg)) ?? []);
-            //yield return CreateNpcSto(nameof(TbNpcSto.Ptr_TbNpcSto.PLOY_ID), "PLOY_ID", "PLOY_ID", ptr_TbNpcSto.PLOY_ID.ToString());
-            yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.LV_ID), "属性*等级", "属性*等级", ptr_TbNpcSto.LV_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbLvCfg)) ?? []);
-            //yield return CreateNpcSto_SelectedContents(nameof(TbNpcSto.Ptr_TbNpcSto.ATTRIB_ID), "ATTRIB_ID", "ATTRIB_ID", ptr_TbNpcSto.ATTRIB_ID.ToString(), this.Cache.GameKeyValues.GetValueOrDefault(nameof(TbAttribCfg)) ?? []);
-
-
-            #endregion
-
-        }
-
-        private static GameSwitchDisplayDTO CreatePlayerSto(string key, string name, string desc, string val)
-        {
-            return new GameSwitchDisplayDTO() { ObjectId = key, DisplayCategory = nameof(TbPlayerSto), DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
-        }
-
-        private static GameSwitchDisplayDTO CreateNpcSto(string key, string name, string desc, string val)
-        {
-            return new GameSwitchDisplayDTO() { ObjectId = key, DisplayCategory = nameof(TbNpcSto), DisplayName = name, DisplayDesc = desc, ContentValue = val, UIType = (int)EnumGameSwitchUIType.TextEditor };
-        }
-        private static GameSwitchDisplayDTO CreateNpcSto_SelectedContents(string key, string name, string desc, string val, GameValueInfoDTO[] selectedContents)
-        {
-            return new GameSwitchDisplayDTO()
-            {
-                ObjectId = key,
-                DisplayCategory = nameof(TbNpcSto),
-                DisplayName = name,
-                DisplayDesc = desc,
-                ContentValue = val,
-                UIType = (int)EnumGameSwitchUIType.Selects,
-                SelectedContents = [.. selectedContents]
-
-            };
-        }
-
-        public GameCharacterStatusDTO GetGameCharacterStatus(GameCharacterObjectDTO characterObjectDTO)
-        {
-            if (characterObjectDTO.CharacterId != this.PlayerId.ToString())
-            {
-                return GameException.Throw<GameCharacterStatusDTO>($"NOT FOUND {characterObjectDTO.CharacterId}");
-            }
-
-
-            return new GameCharacterStatusDTO()
-            {
-                ObjectId = characterObjectDTO.CharacterId,
-                CharacterAttributes = [.. EnumCharacterProp(this.PlayerId), .. EnumCharacterTree(this.PlayerId)]
-            };
-
-
-        }
+        #endregion
 
         public GameCharacterSkillDTO GetGameCharacterSkills(GameCharacterObjectDTO characterObjectDTO)
         {
@@ -328,7 +449,6 @@ namespace Maple.Game.Zaohua.Metadata
             };
 
         }
-
         public GameCharacterSkillDTO UpdateGameCharacterSkill(GameCharacterModifyDTO characterModifyDTO)
         {
             if (characterModifyDTO.CharacterId != this.PlayerId.ToString())
@@ -421,6 +541,9 @@ namespace Maple.Game.Zaohua.Metadata
                 SkillInfos = [.. GameResourceCache.EmptySkills, .. this.EnumArtCfg(this.PlayerId), .. this.EnumMagicCfg(this.PlayerId)],
             };
         }
+
+        #endregion
+
         #endregion
 
         #region Inventory
@@ -515,6 +638,7 @@ namespace Maple.Game.Zaohua.Metadata
             return info;
         }
         #endregion
+
 
     }
 }

@@ -51,20 +51,20 @@ namespace Maple.Game.Zaohua.Win
         protected sealed override async ValueTask LoadGameDataAsync()
         {
             Cache = await this.MonoTaskAsync((p) => GameResourceCache.Create(p)).ConfigureAwait(false);
-            foreach (var item in this.Cache.GameInventories)
-            {
-                if (this.GameSettings.TryGetGameResourceUrl(item.DisplayCategory!, $"{item.ObjectId}.png", out var url))
-                {
-                    item.DisplayImage = url;
-                }
-            }
-            foreach (var item in this.Cache.GameSkills)
-            {
-                if (this.GameSettings.TryGetGameResourceUrl(item.DisplayCategory!, $"{item.ObjectId}.png", out var url))
-                {
-                    item.DisplayImage = url;
-                }
-            }
+            //foreach (var item in this.Cache.GameInventories)
+            //{
+            //    if (this.GameSettings.TryGetGameResourceUrl(item.DisplayCategory!, $"{item.ObjectId}.png", out var url))
+            //    {
+            //        item.DisplayImage = url;
+            //    }
+            //}
+            //foreach (var item in this.Cache.GameSkills)
+            //{
+            //    if (this.GameSettings.TryGetGameResourceUrl(item.DisplayCategory!, $"{item.ObjectId}.png", out var url))
+            //    {
+            //        item.DisplayImage = url;
+            //    }
+            //}
             //var images = await this.UITaskAsync((p, args) => args.Cache.LoadImage(buffer =>
             // {
             //     var unity = args.UnityEngineContext;
@@ -141,21 +141,24 @@ namespace Maple.Game.Zaohua.Win
             var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
             return await this.MonoTaskAsync((p, args) => args.cheatService.GetGameCharacterSkills(args.characterObjectDTO), (cheatService, characterObjectDTO)).ConfigureAwait(false);
         }
-        public sealed override ValueTask<GameCharacterStatusDTO> UpdateCharacterStatusAsync(GameCharacterModifyDTO characterModifyDTO)
+        public sealed override async ValueTask<GameCharacterStatusDTO> UpdateCharacterStatusAsync(GameCharacterModifyDTO characterModifyDTO)
         {
-            return base.UpdateCharacterStatusAsync(characterModifyDTO);
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            return await this.MonoTaskAsync((p, args) => args.cheatService.UpdateGameCharacterStatus(args.characterModifyDTO), (cheatService, characterModifyDTO)).ConfigureAwait(false);
         }
         public sealed override async ValueTask<GameCharacterSkillDTO> UpdateCharacterSkillAsync(GameCharacterModifyDTO characterModifyDTO)
         {
-            var cheatService = await  GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
             return await this.MonoTaskAsync((p, args) => args.cheatService.UpdateGameCharacterSkill(args.characterModifyDTO), (cheatService, characterModifyDTO)).ConfigureAwait(false);
         }
 
         public sealed override async ValueTask<GameCharacterStatusDTO> GetCharacterStatusAsync(GameCharacterObjectDTO characterObjectDTO)
         {
-            var cheatService = await  GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
+            var cheatService = await GameCheatServiceThrowIfNotLoadedAsync().ConfigureAwait(false);
             return await this.MonoTaskAsync((p, args) => args.cheatService.GetGameCharacterStatus(args.characterObjectDTO), (cheatService, characterObjectDTO)).ConfigureAwait(false);
         }
+
+
 
         public sealed override ValueTask<GameMonsterDisplayDTO[]> GetListMonsterDisplayAsync()
         {

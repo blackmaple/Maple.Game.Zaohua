@@ -64,11 +64,11 @@ namespace Maple.Game.Zaohua.Metadata
             /// </summary>
             /// <param name = "treeId">struct System.Int32</param>
             /// <returns>struct System.Void</returns>
-             /*
+             
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodMetadataAttribute("AddTreeSto", "System.Void", CallConvs = [typeof(System.Runtime.CompilerServices.CallConvSuppressGCTransition)])]
             [Maple.MonoGameAssistant.MetadataExtensions.MetadataGenerator.ClassMethodParameterMetadataAttribute("System.Int32", 0)]
             public partial void ADD_TREE_STO(System.Int32 treeId); 
-*/
+
             /// <summary>
             ///   System.Int32 GetMoneyToTree(System.Int32 treeId)
             /// </summary>
